@@ -1,0 +1,18 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+	interactive = auto
+
+[core]
+	#whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
+
+[alias]
+	com = commit -v
+	vs = diff -w --word-diff HEAD^
+	alamierda = reset --hard
+	lg=log --graph --pretty=format:'%Cred%h%Creset -%d%Creset %s %Cgreen(%cr) <%an>%Creset' --abbrev-commit --date=relative
+	gk=log --graph --abbrev-commit --pretty=oneline --decorate
+	fts=checkout --theirs
+	ftw=checkout --ours	
