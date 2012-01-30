@@ -1,3 +1,7 @@
+[user]
+        name = LEOPiC
+        email = leopic@gmail.com
+
 [color]
 	diff = auto
 	status = auto
@@ -7,6 +11,7 @@
 
 [core]
 	#whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
+        editor = vim
 
 [alias]
 	com = commit -v
@@ -16,3 +21,7 @@
 	gk=log --graph --abbrev-commit --pretty=oneline --decorate
 	fts=checkout --theirs
 	ftw=checkout --ours	
+
+[github]
+        user = leopic
+        token = 9496ceb2304e2b06c222cfaa6ddeb702
