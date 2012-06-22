@@ -33,8 +33,11 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-haml'
 Bundle 'ervandew/supertab'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+" por alguna razon esto se cae en CENTos
+if $HOSTNAME != "lpicado-atg-dev.bcinfra.net"
+  Bundle 'L9'
+  Bundle 'FuzzyFinder'
+endif
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
