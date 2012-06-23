@@ -10,6 +10,7 @@ syntax on
 set wildmenu
 set wildmode=list:longest
 set title
+set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 let g:vundle_default_git_proto = 'git'
 
 " Bundle starts here
@@ -32,6 +33,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-haml'
 Bundle 'ervandew/supertab'
+Bundle 'Lokaltog/vim-powerline'
 " vim-scripts repos
 " por alguna razon esto se cae en CENTos
 if $HOSTNAME != "lpicado-atg-dev.bcinfra.net"
