@@ -5,6 +5,7 @@ set shiftwidth=2
 set softtabstop=2
 set syntax=html
 set cursorline
+set cursorcolumn
 set laststatus=2
 syntax on
 set wildmenu
@@ -12,6 +13,23 @@ set wildmode=list:longest
 set title
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 let g:vundle_default_git_proto = 'git'
+
+" use Zencoding for other languages, not just .html files.
+let g:user_zen_settings = {
+  \  'php' : {
+  \    'extends' : 'html',
+  \    'filters' : 'c',
+  \  },
+  \  'jsp' : {
+  \    'extends' : 'html',
+  \  },
+  \  'xml' : {
+  \    'extends' : 'html',
+  \  },
+  \  'haml' : {
+  \    'extends' : 'html',
+  \  },
+  \}
 
 " Bundle starts here
 set nocompatible               " be iMproved
@@ -35,6 +53,7 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-haml'
 Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'mattn/zencoding-vim'
 " vim-scripts repos
 " por alguna razon esto se cae en CENTos
 if $HOSTNAME != "lpicado-atg-dev.bcinfra.net"
