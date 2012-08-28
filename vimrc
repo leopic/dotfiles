@@ -11,6 +11,7 @@ syntax on
 set wildmenu
 set wildmode=list:longest
 set title
+set foldmethod=manual " code folding
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 let g:vundle_default_git_proto = 'git'
 
@@ -35,6 +36,7 @@ let g:user_zen_settings = {
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+" Vundle required stuff, don't mess with
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -42,24 +44,25 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-haml' 
 Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/zencoding-vim'
+
 " vim-scripts repos
+Bundle 'restore_view.vim'
 " por alguna razon esto se cae en CENTos
 if $HOSTNAME != "lpicado-atg-dev.bcinfra.net"
   Bundle 'L9'
   Bundle 'FuzzyFinder'
 endif
+
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -68,10 +71,7 @@ filetype plugin indent on     " required!
 "
 " Brief help
 " :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
 " :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
 

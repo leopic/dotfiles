@@ -11,7 +11,7 @@
 
 [core]
 	#whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
-        editor = vim
+        editor = vim --noplugin
 
 [alias]
 	com = commit -v
