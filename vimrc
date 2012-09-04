@@ -11,6 +11,8 @@ syntax on
 set wildmenu
 set wildmode=list:longest
 set title
+set incsearch " search as you type
+set hlsearch " search highlight
 set foldmethod=manual " code folding
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 let g:vundle_default_git_proto = 'git'
@@ -45,8 +47,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/AutoClose'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
