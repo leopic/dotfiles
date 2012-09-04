@@ -50,7 +50,6 @@ Bundle 'gmarik/vundle'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/AutoClose'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
@@ -58,6 +57,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/zencoding-vim'
+Bundle 'Townk/vim-autoclose' 
 
 " vim-scripts repos
 Bundle 'restore_view.vim'
