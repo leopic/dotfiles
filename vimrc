@@ -58,6 +58,8 @@ Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/zencoding-vim'
 Bundle 'Townk/vim-autoclose' 
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 " vim-scripts repos
 Bundle 'restore_view.vim'
