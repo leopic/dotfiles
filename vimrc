@@ -61,8 +61,14 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
+" intentos de mapping
+map <F2> :FufFile 
+" http://stackoverflow.com/questions/3878692/aliasing-a-command-in-vim
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+
 " vim-scripts repos
 Bundle 'restore_view.vim'
+
 " por alguna razon esto se cae en CENTos
 if $HOSTNAME != "lpicado-atg-dev.bcinfra.net"
   Bundle 'L9'
