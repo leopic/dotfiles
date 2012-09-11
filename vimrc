@@ -11,6 +11,8 @@ syntax on
 set wildmenu
 set wildmode=list:longest
 set title
+" backspace broke wtf!
+set bs=2
 set incsearch " search as you type
 set hlsearch " search highlight
 set foldmethod=manual " code folding
@@ -62,12 +64,8 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
 " vim-scripts repos
-Bundle 'restore_view.vim'
-" por alguna razon esto se cae en CENTos
-if $HOSTNAME != "lpicado-atg-dev.bcinfra.net"
-  Bundle 'L9'
-  Bundle 'FuzzyFinder'
-endif
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
