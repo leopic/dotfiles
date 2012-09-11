@@ -18,6 +18,10 @@ set hlsearch " search highlight
 set foldmethod=manual " code folding
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 let g:vundle_default_git_proto = 'git'
+" intentos de mapping
+map <F2> :FufFile 
+" http://stackoverflow.com/questions/3878692/aliasing-a-command-in-vim
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
 " use Zencoding for other languages, not just .html files.
 let g:user_zen_settings = {
@@ -64,8 +68,11 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
 " vim-scripts repos
+
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+
+Bundle 'restore_view.vim'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
