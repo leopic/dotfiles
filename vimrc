@@ -1,3 +1,4 @@
+colorscheme desert
 set number
 set nowrap
 set expandtab
@@ -66,6 +67,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'Townk/vim-autoclose' 
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'Rip-Rip/clang_complete'
 
 " vim-scripts repos
 
