@@ -1,3 +1,6 @@
+" compile, execute after save 
+autocmd BufWritePost * !~/compile.sh <afile>
+
 colorscheme desert
 set number
 set nowrap
