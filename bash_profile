@@ -1,5 +1,6 @@
 # aliases
-alias lls="ls -ogh"
+alias l1="ls -ogh"
+alias l2="ls -1Fsh --group-directories-first"
 alias log="git log --no-merges"
 alias apre="sudo /etc/init.d/apache2 restart"
 alias aplog="tail -f /var/log/apache2/error.log"
@@ -30,3 +31,4 @@ export JDK_HOME="/usr/lib/jvm/jdk1.6.0_32"
 export JAVA_HOME="/usr/lib/jvm/jdk1.6.0_32"
 
 #ssh-add
+

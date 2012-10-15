@@ -21,6 +21,8 @@ editor = vim --noplugin
   fts=checkout --theirs
   ftw=checkout --ours
   rm=branch :
+  st=status
+  co=commit
 
 [github]
   user = leopic
