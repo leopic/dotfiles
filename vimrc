@@ -1,5 +1,5 @@
 " compile, execute after save 
-autocmd BufWritePost * !~/compile.sh <afile>
+"autocmd BufWritePost * !~/compile.sh <afile>
 
 colorscheme desert
 set number
@@ -71,6 +71,7 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'miripiruni/CSScomb-for-Vim'
 
 " vim-scripts repos
 
