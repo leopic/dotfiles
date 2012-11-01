@@ -1,26 +1,38 @@
 " compile, execute after save 
-"autocmd BufWritePost * !~/compile.sh <afile>
+" autocmd BufWritePost * !~/compile.sh <afile>
 
 colorscheme desert
+" line numbers
 set number
+" don't wrap long lines
 set nowrap
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set syntax=html
+" line under the cursorline
 set cursorline
+" highlighting current column
 set cursorcolumn
+" two lines in status bar
 set laststatus=2
+" turning on syntax highlighting
 syntax on
+" running wild brother
 set wildmenu
 set wildmode=list:longest
 set title
 " backspace broke wtf!
 set bs=2
-set incsearch " search as you type
-set hlsearch " search highlight
-set foldmethod=manual " code folding
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+" search as you type
+set incsearch
+" search highlight
+set hlsearch
+" code folding
+set foldmethod=manual
+" Explicitly tell vim that the terminal supports 256 colors
+set t_Co=256
+" sometimes vundle can't resolve https protocol
 let g:vundle_default_git_proto = 'git'
 " intentos de mapping
 map <F2> :FufFile 
@@ -58,26 +70,38 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 Bundle 'pangloss/vim-javascript'
+" git wrapper
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-haml' 
+" autocomplete con tab
 Bundle 'ervandew/supertab'
+" super tab!
 Bundle 'Lokaltog/vim-powerline'
+" zencoding
 Bundle 'mattn/zencoding-vim'
+" autoclose {}'s
 Bundle 'Townk/vim-autoclose' 
 Bundle 'mattn/webapi-vim'
+" :Gist, fawesome
 Bundle 'mattn/gist-vim'
+" syntax highlight for stylus
+Bundle 'wavded/vim-stylus'
+" add C++ support
 Bundle 'Rip-Rip/clang_complete'
+" CSSComb plugin
 Bundle 'miripiruni/CSScomb-for-Vim'
 
 " vim-scripts repos
 
 Bundle 'L9'
+" kick-ass kinder
 Bundle 'FuzzyFinder'
 
+" restore folds
 Bundle 'restore_view.vim'
 
 " non github repos

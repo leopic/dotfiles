@@ -1,11 +1,13 @@
 # aliases
-alias lls="ls -ogh"
+alias l1="ls -ogh"
+alias l2="ls -1Fsh --group-directories-first"
 alias log="git log --no-merges"
 
 # TODO: ubuntu only
 alias apre="sudo /etc/init.d/apache2 restart"
 alias aplog="tail -f /var/log/apache2/error.log"
 alias ij="/home/leopic/Apps/idea-IU-95.627/bin/./idea.sh"
+alias untar="tar -xzvf"
 
 #git
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
@@ -34,3 +36,4 @@ export JDK_HOME="/usr/lib/jvm/jdk1.6.0_32"
 export JAVA_HOME="/usr/lib/jvm/jdk1.6.0_32"
 
 #ssh-add
+
