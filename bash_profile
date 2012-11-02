@@ -31,5 +31,7 @@ PATH=$HOME/Apps/Sublime\ Text\ 2/:"$PATH"
 export JDK_HOME="/usr/lib/jvm/jdk1.6.0_32"
 export JAVA_HOME="/usr/lib/jvm/jdk1.6.0_32"
 
+bind 'set completion-ignore-case on'
+
 #ssh-add
 
