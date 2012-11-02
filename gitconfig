@@ -10,7 +10,7 @@
   interactive = auto
 
 [core]
-editor = vim --noplugin
+  editor = vim --noplugin
 
 [alias]
   com = commit -v
