@@ -9,6 +9,7 @@
 *.o
 *.so
 .sass-cache/
+*.gch
 
 # Logs and such #
 ######################

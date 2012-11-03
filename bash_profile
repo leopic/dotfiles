@@ -23,6 +23,8 @@ if [ ! -f ~/.git-completion.sh ]; then
 fi
 . ~/.git-completion.sh
 
+# TODO: instalar y preparar shelr 
+# https://github.com/shelr/shelr
 
 # exports
 export EDITOR='vim'
@@ -52,7 +54,7 @@ if [[ ${os} == "Linux" ]]; then
 fi
 
 # branch in prompt
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\¢ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)➔ '
 
 #if [[ ${os} == "Darwin" ]]; then
 #  __git_ps1 () 
