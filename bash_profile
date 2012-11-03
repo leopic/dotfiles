@@ -7,24 +7,30 @@ alias cpdir="cp -r"
 alias psg="ps aux | grep"
 
 # Z: z is the new j, yo.
-if [ -d ~/Apps/z ]; then
-  . ~/Apps/z/z.sh
-else
-  echo "No Z, cloning"
-  cd ~ && mkdir Apps && git clone git://github.com/rupa/z.git
-  . ~/Apps/z/z.sh
+if [ ! -d ~/Apps/z ]; then
+  cd ~/ && mkdir Apps && git clone git://github.com/rupa/z.git
 fi
+. ~/Apps/z/z.sh
 
 # If git vundle doesn't exist, clone it.
 if [ ! -d ~/.vim/bundle/vundle ]; then
   cd ~/ && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle 
 fi
 
+# Git completion bash script
+if [ ! -f ~/.git-completion.sh ]; then
+  cd ~/ && wget -O .git-completion.sh https://raw.github.com/git/git/master/contrib/completion/git-completion.bash 
+fi
+. ~/.git-completion.sh
+
+
 # exports
 export EDITOR='vim'
-bind 'set completion-ignore-case on'
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
+
+# otras monerias
+bind 'set completion-ignore-case on'
 shopt -s histappend
 shopt -s checkwinsize
 
@@ -48,16 +54,16 @@ fi
 # branch in prompt
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
 
-if [[ ${os} == "Darwin" ]]; then
-  __git_ps1 () 
-  { 
-      local b="$(git symbolic-ref HEAD 2>/dev/null)";
-      if [ -n "$b" ]; then
-          printf " (%s)" "${b##refs/heads/}";
-      fi
-  }
-  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
-fi
+#if [[ ${os} == "Darwin" ]]; then
+#  __git_ps1 () 
+#  { 
+#      local b="$(git symbolic-ref HEAD 2>/dev/null)";
+#      if [ -n "$b" ]; then
+#          printf " (%s)" "${b##refs/heads/}";
+#      fi
+#  }
+#  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
+#fi
 
 
 # Handy to have
