@@ -1,11 +1,10 @@
 # aliases
 alias l1="ls -ogh"
-alias l2="ls -1Fsh --group-directories-first"
 alias log="git log --no-merges"
 alias untar="tar -xzvf"
-
-# branch in prompt: TODO, make it werk in Mac.
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
+alias rmdir="rm -rf"
+alias cpdir="cp -r"
+alias psg="ps aux | grep"
 
 # Z: z is the new j, yo.
 if [ -d ~/Apps/z ]; then
@@ -24,6 +23,10 @@ fi
 # exports
 export EDITOR='vim'
 bind 'set completion-ignore-case on'
+export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth
+shopt -s histappend
+shopt -s checkwinsize
 
 # Ubuntu only 
 os=`uname`
@@ -35,13 +38,26 @@ if [[ ${os} == "Linux" ]]; then
   alias apre="sudo /etc/init.d/apache2 restart"
   alias aplog="tail -f /var/log/apache2/error.log"
   alias ij="/home/leopic/Apps/idea-IU-95.627/bin/./idea.sh"
+  alias l2="ls -1Fsh --group-directories-first"
 
   #if [ -f ~/.bash_profile ]; then
     #. ~/.bash_profile
   #fi
 fi
 
+# branch in prompt
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
 
+if [[ ${os} == "Darwin" ]]; then
+  __git_ps1 () 
+  { 
+      local b="$(git symbolic-ref HEAD 2>/dev/null)";
+      if [ -n "$b" ]; then
+          printf " (%s)" "${b##refs/heads/}";
+      fi
+  }
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
+fi
 
 
 # Handy to have

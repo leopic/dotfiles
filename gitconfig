@@ -11,18 +11,21 @@
 
 [core]
   editor = vim --noplugin
+  excludesfile = ~/.gitignore_global
 
 [alias]
-  com = commit -v
   vs = diff -w --word-diff HEAD^
   alamierda = reset --hard
   lg=log --graph --pretty=format:'%Cred%h%Creset -%d%Creset %s %Cgreen(%cr) <%an>%Creset' --abbrev-commit --date=relative
   gk=log --graph --abbrev-commit --pretty=oneline --decorate
   fts=checkout --theirs
   ftw=checkout --ours
-  rm=branch :
+  rm=push origin :
   st=status
   co=commit
+  com = commit -v
+  di=diff
+  undo=reset --soft HEAD^
 
 [github]
   user = leopic
