@@ -22,8 +22,8 @@
   ftw=checkout --ours
   rm=push origin :
   st=status
-  co=commit
-  com = commit -v
+  co=commit -v
+  #com = commit -v
   di=diff
   undo=reset --soft HEAD^
 
