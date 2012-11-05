@@ -23,7 +23,6 @@
   rm=push origin :
   st=status
   co=commit -v
-  #com = commit -v
   di=diff
   undo=reset --soft HEAD^
 
