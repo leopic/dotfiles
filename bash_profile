@@ -6,9 +6,11 @@ alias rmdir="rm -rf"
 alias cpdir="cp -r"
 alias psg="ps aux | grep"
 
+# TODO: create Apps folder
+
 # Z: z is the new j, yo.
-if [ ! -d ~/Apps/z ]; then
-  cd ~/ && mkdir Apps && git clone git://github.com/rupa/z.git
+if [ ! -d ~/Apps/z/ ]; then
+  cd ~/Apps && git clone git://github.com/rupa/z.git && cd -
 fi
 . ~/Apps/z/z.sh
 
@@ -19,7 +21,7 @@ fi
 
 # Git completion bash script
 if [ ! -f ~/.git-completion.sh ]; then
-  cd ~/ && wget -O .git-completion.sh https://raw.github.com/git/git/master/contrib/completion/git-completion.bash 
+  cd ~/ && wget -O .git-completion.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash 
 fi
 . ~/.git-completion.sh
 
