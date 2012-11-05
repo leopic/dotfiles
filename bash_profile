@@ -55,6 +55,16 @@ if [[ ${os} == "Linux" ]]; then
   #fi
 fi
 
+# CentOS only
+if [[ `hostname -s` == "lpicado-atg-dev" ]]; then
+  alias katg="$HOME/atgScripts/atg kill-all"
+  alias ratg="$HOME/atgScripts/atg restart public"
+  alias satg="$HOME/atgScripts/atg start public"
+  alias anta="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant all; cd -;"
+  alias antf="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant full; cd -;"
+  alias df="git diff develop | pastebin -f diff -a leopic"
+fi
+
 # branch in prompt
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)➔ '
 
