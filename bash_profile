@@ -7,6 +7,8 @@ alias cpdir="cp -r"
 alias psg="ps aux | grep"
 
 # TODO: create Apps folder
+# TODO: instalar y preparar shelr 
+# https://github.com/shelr/shelr
 
 # Z: z is the new j, yo.
 if [ ! -d ~/Apps/z/ ]; then
@@ -25,9 +27,6 @@ if [ ! -f ~/.git-completion.sh ]; then
 fi
 . ~/.git-completion.sh
 
-# TODO: instalar y preparar shelr 
-# https://github.com/shelr/shelr
-
 # exports
 export EDITOR='vim'
 export HISTCONTROL=ignoredups
@@ -39,8 +38,7 @@ shopt -s histappend
 shopt -s checkwinsize
 
 # Ubuntu only 
-os=`uname`
-if [[ ${os} == "Linux" ]]; then
+if [[ `hostname -s` == "leopic-Latitude-E6520" ]]; then
   export JDK_HOME="/usr/lib/jvm/jdk1.6.0_32"
   export JAVA_HOME="/usr/lib/jvm/jdk1.6.0_32"
   PATH=$HOME/Apps/Sublime\ Text\ 2/:"$PATH"
@@ -49,18 +47,16 @@ if [[ ${os} == "Linux" ]]; then
   alias aplog="tail -f /var/log/apache2/error.log"
   alias ij="/home/leopic/Apps/idea-IU-95.627/bin/./idea.sh"
   alias l2="ls -1Fsh --group-directories-first"
-
-  #if [ -f ~/.bash_profile ]; then
-    #. ~/.bash_profile
-  #fi
 fi
 
 # CentOS only
 if [[ `hostname -s` == "lpicado-atg-dev" ]]; then
+  PATH=$PATH:$HOME/bin:$HOME/atgScripts
   alias katg="$HOME/atgScripts/atg kill-all"
   alias ratg="$HOME/atgScripts/atg restart public"
   alias satg="$HOME/atgScripts/atg start public"
   alias anta="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant all; cd -;"
+  alias antd="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant update-data; cd -;"
   alias antf="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant full; cd -;"
   alias df="git diff develop | pastebin -f diff -a leopic"
 fi
