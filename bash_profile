@@ -47,6 +47,7 @@ if [[ `hostname -s` == "leopic-Latitude-E6520" ]]; then
   alias aplog="tail -f /var/log/apache2/error.log"
   alias ij="/home/leopic/Apps/idea-IU-95.627/bin/./idea.sh"
   alias l2="ls -1Fsh --group-directories-first"
+  alias open="xdg-open"
 fi
 
 # CentOS only
