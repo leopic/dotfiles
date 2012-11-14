@@ -9,6 +9,9 @@ alias psg="ps aux | grep"
 # TODO: create Apps folder
 # TODO: instalar y preparar shelr 
 # https://github.com/shelr/shelr
+# Perm'ing your key: TODO, make it werk.
+# ssh-add
+# exec ssh-agent bash
 
 # Z: z is the new j, yo.
 if [ ! -d ~/Apps/z/ ]; then
@@ -60,15 +63,16 @@ if [[ `hostname -s` == "lpicado-atg-dev" ]]; then
   alias antd="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant update-data; cd -;"
   alias antf="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant full; cd -;"
   alias df="git diff develop | pastebin -f diff -a leopic"
+  # avoiding branching gitconfig
+  cd ~/workspaces/atg-backcountry-ca/ && git config user.name "Leo Picado" && git config user.email "lpicado@backcountry.com"
 fi
+
 
 # branch in prompt
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)➔ '
 
+# adding git branch to prompt in DH/Mac
 if [[ `hostname -s` == "lpicados-mbp" ]] || [[ `hostname -s` == "suhail" ]]; then
-  alias ls="ls -G"
-  export LSCOLORS=dxfxcxdxbxegedabagacad
-
   __git_ps1 () 
   { 
       local b="$(git symbolic-ref HEAD 2>/dev/null)";
@@ -79,12 +83,13 @@ if [[ `hostname -s` == "lpicados-mbp" ]] || [[ `hostname -s` == "suhail" ]]; the
   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
 fi
 
+# dandole color a los ls en mac
+if [[ `hostname -s` == "lpicados-mbp" ]]; then
+  alias ls="ls -G"
+  export LSCOLORS=dxfxcxdxbxegedabagacad
+fi
 
 # Handy to have
 # key is corrupt, permissions to open
 alias fixkey="sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub"
 
-# Perm'ing your key: TODO, make it werk.
-# ssh-add
-# exec ssh-agent bash
-#
