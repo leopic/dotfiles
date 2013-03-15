@@ -1,6 +1,6 @@
 # aliases
 alias l1="ls -ogh"
-alias log="git log --no-merges"
+alias log="git log --no-merges --name-only"
 alias untar="tar -xzvf"
 alias rmdir="rm -rf"
 alias cpdir="cp -r"
@@ -42,19 +42,24 @@ shopt -s checkwinsize
 
 # Ubuntu only 
 if [[ `hostname -s` == "leopic-Latitude-E6520" ]]; then
+  alias ls="ls --color"
   export JDK_HOME="/usr/lib/jvm/jdk1.6.0_32"
   export JAVA_HOME="/usr/lib/jvm/jdk1.6.0_32"
   PATH=$HOME/Apps/Sublime\ Text\ 2/:"$PATH"
+  PATH=$HOME/Apps/WebStorm-121.390/bin/:"$PATH"
 
   alias apre="sudo /etc/init.d/apache2 restart"
   alias aplog="tail -f /var/log/apache2/error.log"
   alias ij="/home/leopic/Apps/idea-IU-95.627/bin/./idea.sh"
   alias l2="ls -1Fsh --group-directories-first"
   alias open="xdg-open"
+  alias myip="ifconfig | grep 'inet addr:' | head -1"
+  alias sngx="sudo service nginx start; echo 'Server running on http://localhost:81/'"
 fi
 
 # CentOS only
 if [[ `hostname -s` == "lpicado-atg-dev" ]]; then
+  alias ls="ls --color"
   PATH=$PATH:$HOME/bin:$HOME/atgScripts
   alias katg="$HOME/atgScripts/atg kill-all"
   alias ratg="$HOME/atgScripts/atg restart public"
@@ -70,6 +75,11 @@ fi
 
 # branch in prompt
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)➔ '
+
+# adding git branch to prompt in DH
+if [[ `hostname -s` == "suhail" ]]; then
+  alias ls="ls --color"
+fi
 
 # adding git branch to prompt in DH/Mac
 if [[ `hostname -s` == "lpicados-mbp" ]] || [[ `hostname -s` == "suhail" ]]; then

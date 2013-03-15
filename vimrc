@@ -38,6 +38,8 @@ let g:vundle_default_git_proto = 'git'
 map <F2> :FufFile 
 " http://stackoverflow.com/questions/3878692/aliasing-a-command-in-vim
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+" Vertical line after 80 chars
+set colorcolumn=80
 
 " use Zencoding for other languages, not just .html files.
 let g:user_zen_settings = {
@@ -94,8 +96,16 @@ Bundle 'wavded/vim-stylus'
 Bundle 'Rip-Rip/clang_complete'
 " CSSComb plugin
 Bundle 'miripiruni/CSScomb-for-Vim'
+" Markdown support
+Bundle 'plasticboy/vim-markdown'
+" VIM Livereload
+"Bundle 'flomotlik/vim-livereload'
+" VIM Characterize
+Bundle 'tpope/vim-characterize'
+
 
 " vim-scripts repos
+
 
 Bundle 'L9'
 " kick-ass kinder
