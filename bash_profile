@@ -54,7 +54,7 @@ if [[ `hostname -s` == "leopic-Latitude-E6520" ]]; then
   alias l2="ls -1Fsh --group-directories-first"
   alias open="xdg-open"
   alias myip="ifconfig | grep 'inet addr:' | head -1"
-  alias sngx="sudo service nginx start; echo 'Server running on http://localhost:81/'"
+  alias sath="cd /var/www/athlete/src; export USE_MYSQL=1; python manage.py runserver; cd -;"
 fi
 
 # CentOS only
