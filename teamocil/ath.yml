@@ -1,0 +1,16 @@
+session:
+  name: "athlete"
+  windows:
+    - name: "log"
+      root: "~/www/athlete"
+      panes:
+        - cmd: ["sath"]
+    - name: "compass"
+      root: "~/www/athlete"
+      panes:
+        - cmd: ["compass watch public"]
+    - name: "bash|git"
+      root: "~/www/athlete"
+      panes:
+        - cmd: ["git st"]
+          focus: true

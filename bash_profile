@@ -45,16 +45,25 @@ if [[ `hostname -s` == "leopic-Latitude-E6520" ]]; then
   alias ls="ls --color"
   export JDK_HOME="/usr/lib/jvm/jdk1.6.0_32"
   export JAVA_HOME="/usr/lib/jvm/jdk1.6.0_32"
-  PATH=$HOME/Apps/Sublime\ Text\ 2/:"$PATH"
-  PATH=$HOME/Apps/WebStorm-121.390/bin/:"$PATH"
+  # Agregando variable Android SDK
+  export ANDROID_SDK="/home/leopic/Apps/adt-bundle-linux-x86_64-20130729"
+  # Agregando Android SDK al Path
+  PATH=$HOME/Apps/WebStorm-129.664/bin/:"$PATH"
+  PATH=/home/leopic/Apps/adt-bundle-linux-x86_64-20130729/sdk/platform-tools:"$PATH"
+  PATH=/home/leopic/Apps/adt-bundle-linux-x86_64-20130729/sdk/tools:"$PATH"
+  complete -W "$(teamocil --list)" teamocil
 
   alias apre="sudo /etc/init.d/apache2 restart"
   alias aplog="tail -f /var/log/apache2/error.log"
   alias ij="/home/leopic/Apps/idea-IU-95.627/bin/./idea.sh"
+  alias tis="/home/leopic/Apps/Titanium_Studio/TitaniumStudio"
+  alias titanium.py=$HOME/.titanium/mobilesdk/linux/3.1.2.GA/titanium.py
   alias l2="ls -1Fsh --group-directories-first"
   alias open="xdg-open"
   alias myip="ifconfig | grep 'inet addr:' | head -1"
-  alias sath="cd /var/www/athlete/src; export USE_MYSQL=1; python manage.py runserver; cd -;"
+  alias sath="cd /var/www/athlete/src; export USE_MYSQL=1; sudo pip install -r ../requirements/global.txt; sudo pip install -r ../requirements/dev.txt; python manage.py syncdb; python manage.py migrate; python manage.py runserver;"
+  alias tmath="teamocil ath --here;"  
+  alias tath="java -jar ~/Apps/BrowserStackTunnel.jar 3TUmPOT0CxxeCR6V4KQE localhost,8000,0;"
 fi
 
 # CentOS only
