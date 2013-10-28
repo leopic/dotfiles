@@ -64,6 +64,23 @@ if [[ `hostname -s` == "leopic-Latitude-E6520" ]]; then
   alias sath="cd /var/www/athlete/src; export USE_MYSQL=1; sudo pip install -r ../requirements/global.txt; sudo pip install -r ../requirements/dev.txt; python manage.py syncdb; python manage.py migrate; python manage.py runserver;"
   alias tmath="teamocil ath --here;"  
   alias tath="java -jar ~/Apps/BrowserStackTunnel.jar 3TUmPOT0CxxeCR6V4KQE localhost,8000,0;"
+
+  # ATG
+  PATH=$PATH:$HOME/bin:$HOME/atgScripts
+  alias satg="$HOME/atgScripts/atg start public_switching"
+  alias katg="$HOME/atgScripts/atg kill-all"
+  alias anta="cd $HOME/workspace/atg-backcountry-ca/modules/; ant all; cd -;"
+  alias antd="cd $HOME/workspace/atg-backcountry-ca/modules/; ant update-data; cd -;"
+  alias antf="cd $HOME/workspace/atg-backcountry-ca/modules/; ant full; cd -;"
+  export ATG_HOME=/opt/atg/atg10.0.1                                                        
+  export JBOSS_HOME=/opt/jboss-eap-5.0/jboss-as
+  export CLASSPATH=.:$JBOSS_HOME/server/ATGProduction/lib/ojdbc6.jar:$CLASSPATH             
+  export DYNAMO_HOME=/opt/atg/atg10.0.1/home                                                
+  export DYNAMO_ROOT=/opt/atg/atg10.0.1                                                     
+  export JAVA_VM=$JAVA_HOME/bin/java
+  export ORACLE_SID=atg
+  export PATH=.$JAVA_HOME/jre/bin:$PATH
+  export PATH=.~/workspace/atg-backcountry-ca/jboss-resources/scripts:$PATH
 fi
 
 # CentOS only
@@ -85,11 +102,6 @@ fi
 # branch in prompt
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)➔ '
 
-# adding git branch to prompt in DH
-if [[ `hostname -s` == "suhail" ]]; then
-  alias ls="ls --color"
-fi
-
 # adding git branch to prompt in DH/Mac
 if [[ `hostname -s` == "lpicados-mbp" ]] || [[ `hostname -s` == "suhail" ]]; then
   __git_ps1 () 
@@ -100,6 +112,13 @@ if [[ `hostname -s` == "lpicados-mbp" ]] || [[ `hostname -s` == "suhail" ]]; the
       fi
   }
   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
+fi
+
+# Dreamhost
+if [[ `hostname -s` == "suhail" ]]; then
+  alias ls="ls --color" # colors for ls
+  export PYTHONPATH=$PYTHONPATH:/home/leopic/lib/python # adding lib/python to pythonpath
+  pystall="python setup.py install --home=~" # install new modules
 fi
 
 # dandole color a los ls en mac

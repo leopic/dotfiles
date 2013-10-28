@@ -11,7 +11,8 @@
 
 [core]
   editor = vim --noplugin
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore
+  autocrlf = true
 
 [alias]
   vs = diff -w --word-diff HEAD^
