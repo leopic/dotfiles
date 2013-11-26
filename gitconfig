@@ -26,6 +26,7 @@
   co=commit -v
   di=diff
   undo=reset --soft HEAD^
+  pldv=pull origin develop
 
 [github]
   user = leopic

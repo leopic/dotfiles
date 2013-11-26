@@ -5,6 +5,7 @@ alias untar="tar -xzvf"
 alias rmdir="rm -rf"
 alias cpdir="cp -r"
 alias psg="ps aux | grep"
+alias p2p="git pull origin develop && git checkout develop && git pull"
 
 # TODO: create Apps folder
 # TODO: instalar y preparar shelr 
@@ -14,6 +15,10 @@ alias psg="ps aux | grep"
 # exec ssh-agent bash
 
 # Z: z is the new j, yo.
+if [ ! -d ~/Apps/ ]; then
+  cd ~/ && mkdir Apps && cd -
+fi
+
 if [ ! -d ~/Apps/z/ ]; then
   cd ~/Apps && git clone git://github.com/rupa/z.git && cd -
 fi
@@ -122,7 +127,7 @@ if [[ `hostname -s` == "suhail" ]]; then
 fi
 
 # dandole color a los ls en mac
-if [[ `hostname -s` == "lpicados-mbp" ]]; then
+if [[ `hostname -s` == "lpicados-mbp" || `hostname -s` == "dev-mac" ]]; then
   alias ls="ls -G"
   export LSCOLORS=dxfxcxdxbxegedabagacad
 fi
