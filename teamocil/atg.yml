@@ -1,0 +1,19 @@
+session:
+  name: "atg"
+  windows:
+    - name: "log"
+      root: "/Users/lpicado/Work/Checkouts/atg-backcountry-ca/modules/Store"
+      panes:
+        - cmd: atg tail public
+    - name: "guard|sclb"
+      root: "/Users/lpicado/Work/Checkouts/atg-backcountry-ca/modules/Store"
+      layout: even-horizontal
+      panes:
+        - cmd: guard -g mobile
+        - cmd: sclb
+
+    - name: "bash|git"
+      root: "/Users/lpicado/Work/Checkouts/atg-backcountry-ca/modules/Store"
+      panes:
+        - cmd: git st
+          focus: true

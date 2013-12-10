@@ -132,6 +132,25 @@ if [[ `hostname -s` == "lpicados-mbp" || `hostname -s` == "dev-mac" ]]; then
   export LSCOLORS=dxfxcxdxbxegedabagacad
 fi
 
+if [[ `hostname -s` == "dev-mac" ]]; then
+  export BASEDIR=$HOME/Work/Checkouts/atg-backcountry-ca
+  export STOREDIR=$BASEDIR/modules/Store
+  export JBOSS_HOME="/Users/lpicado/Work/jboss-eap-5.0/jboss-as"
+  export ATG_HOME="/Users/lpicado/Work/atg/atg10.0.1"
+  export DYNAMO_HOME="$ATG_HOME/home"
+  export PATH="$PATH:/Users/lpicado/Work/Checkouts/atg-backcountry-ca/jboss-resources/scripts"
+  export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+  alias sclb="java -jar ~/Apps/Sauce-Connect.jar bc_lpicado 475ef286-0787-4b04-ad48-041c89778e60"
+  alias katg="atg kill-all"
+  alias ratg="atg restart public"
+  alias satg="atg start public"
+  alias tatg="atg tail public"
+  alias anta="cd /Users/lpicado/Work/Checkouts/atg-backcountry-ca/modules/; ant all; cd -;"
+  alias antd="cd /Users/lpicado/Work/Checkouts/atg-backcountry-ca/modules/; ant update-data; cd -;"
+  alias antf="cd /Users/lpicado/Work/Checkouts/atg-backcountry-ca/modules/; ant full; cd -;"
+  alias bap="cd /Users/lpicado/Work/Checkouts/gearcloset-titanium; ti build -p ios; cd -;"
+fi
+
 # Handy to have
 # key is corrupt, permissions to open
 alias fixkey="sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub"
