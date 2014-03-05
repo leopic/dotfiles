@@ -6,6 +6,7 @@ colorscheme desert
 set number
 " don't wrap long lines
 set nowrap
+" file endings to unix
 set expandtab
 set shiftwidth=2
 set softtabstop=2

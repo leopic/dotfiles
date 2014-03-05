@@ -1,19 +1,17 @@
 [user]
-  name = LEOPiC
+	name = Leo Picado
   email = leopic@gmail.com
-
 [color]
   diff = auto
   status = auto
   branch = auto
   ui = true
   interactive = auto
-
 [core]
   editor = vim --noplugin
   excludesfile = ~/.gitignore
-  autocrlf = true
-
+  ignorecase = true
+  autocrlf = input
 [alias]
   vs = diff -w --word-diff HEAD^
   alamierda = reset --hard
@@ -27,7 +25,8 @@
   di=diff
   undo=reset --soft HEAD^
   pldv=pull origin develop
-
 [github]
   user = leopic
   token = 9496ceb2304e2b06c222cfaa6ddeb702
+[push]
+  default = simple
