@@ -136,6 +136,8 @@ if [[ `hostname -s` == "lpicados-mbp" || `hostname -s` == "dev-mac" ]]; then
 fi
 
 if [[ `hostname -s` == "dev-mac" ]]; then
+  export LC_ALL=en_US.UTF-8  
+  export LANG=en_US.UTF-8
   #export NODE_STARTS_CRON=true
   #export NODE_MINI_STORIES=true
   export BASEDIR=$HOME/Work/Checkouts/atg
@@ -144,7 +146,9 @@ if [[ `hostname -s` == "dev-mac" ]]; then
   export ATG_HOME="/Users/lpicado/Work/atg/atg10.0.1"
   export DYNAMO_HOME="$ATG_HOME/home"
   export PATH="$PATH:/Users/lpicado/Work/Checkouts/atg/jboss-resources/scripts"
-  export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+  #export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home"
+  #alias mvntst="cd /Users/lpicado/Sites/falafel; EXPORT JAVA_HOME=\"/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home\"; mvn test; cd -;"
   alias sclb="java -jar ~/Apps/Sauce-Connect.jar bc_lpicado 475ef286-0787-4b04-ad48-041c89778e60"
   alias katg="cd /Users/lpicado/Work/Checkouts/atg/jboss-resources/scripts; ./atg kill-all; cd -;"
   alias satg="cd /Users/lpicado/Work/Checkouts/atg/jboss-resources/scripts; ./atg start public; cd -;"
@@ -153,9 +157,9 @@ if [[ `hostname -s` == "dev-mac" ]]; then
   alias antd="cd /Users/lpicado/Work/Checkouts/atg/modules/; ant update-data; cd -;"
   alias antf="cd /Users/lpicado/Work/Checkouts/atg/modules/; ant full; cd -;"
   alias bap="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 6.1 --tall --retina -F iphone --liveview; cd -;"
-  alias bap7="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 7.0.3 -F iphone --liveview; cd -;"
+  alias bap7="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 7.1 --tall --retina --sim-64-btin -F iphone --liveview; cd -;"
   alias bat="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 6.1 --retina -F ipad --liveview; cd -;"
-  alias bat7="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 7.0.3 --retina -F ipad --liveview; cd -;"
+  alias bat7="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 7.1 --retina -F ipad --liveview; cd -;"
 fi
 
 # Handy to have
