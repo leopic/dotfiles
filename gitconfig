@@ -1,6 +1,6 @@
 [user]
-name = Leo Picado
-email = leopic@gmail.com
+  name = Leo Picado
+  email = leopic@gmail.com
 [color]
   diff = auto
   status = auto
@@ -9,7 +9,7 @@ email = leopic@gmail.com
   interactive = auto
 [core]
   editor = vim --noplugin
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
   ignorecase = true
   autocrlf = input
 [help]
@@ -28,9 +28,5 @@ email = leopic@gmail.com
   pldv=pull origin develop
   chk=checkout
   nbr=checkout -b
-  rmbr=push origin :
-[github]
-  user = leopic
-  token = 9496ceb2304e2b06c222cfaa6ddeb702
 [push]
   default = simple

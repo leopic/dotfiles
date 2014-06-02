@@ -16,6 +16,7 @@
 *.log
 *.swp
 .idea/
+*.iml
 
 # OS generated files #
 ######################

@@ -6,7 +6,6 @@ alias untar="tar -xzvf"
 alias rmdir="rm -rf"
 alias cpdir="cp -r"
 alias psg="ps aux | grep"
-alias p2p="git pull origin develop && git checkout develop && git pull"
 which vim > /dev/null 2>&1 && alias vi=vim
 
 # TODO: create Apps folder
@@ -32,10 +31,10 @@ if [ ! -d ~/.vim/bundle/vundle ]; then
 fi
 
 # Git completion bash script
-if [ ! -f ~/.git-completion.sh ]; then
-  cd ~/ && wget -O .git-completion.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash 
-fi
-. ~/.git-completion.sh
+#if [ ! -f ~/.git-completion.sh ]; then
+  #cd ~/ && wget -O .git-completion.sh --no-check-certificate https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash 
+#fi
+#. ~/.git-completion.sh
 
 # exports
 export EDITOR='vim'
@@ -50,67 +49,34 @@ export HISTCONTROL=ignoreboth
 # Ubuntu only 
 if [[ `hostname -s` == "leopic-Latitude-E6520" ]]; then
   alias ls="ls --color -F"
-  export JDK_HOME="/usr/lib/jvm/jdk1.6.0_32"
-  export JAVA_HOME="/usr/lib/jvm/jdk1.6.0_32"
+  #export JDK_HOME="/usr/lib/jvm/jdk1.6.0_32"
+  #export JAVA_HOME="/usr/lib/jvm/jdk1.6.0_32"
   # Agregando variable Android SDK
-  export ANDROID_SDK="/home/leopic/Apps/adt-bundle-linux-x86_64-20130729"
+  #export ANDROID_SDK="/home/leopic/Apps/adt-bundle-linux-x86_64-20130729"
   # Agregando Android SDK al Path
-  PATH=$HOME/Apps/WebStorm-129.664/bin/:"$PATH"
-  PATH=/home/leopic/Apps/adt-bundle-linux-x86_64-20130729/sdk/platform-tools:"$PATH"
-  PATH=/home/leopic/Apps/adt-bundle-linux-x86_64-20130729/sdk/tools:"$PATH"
-  complete -W "$(teamocil --list)" teamocil
+  #PATH=$HOME/Apps/WebStorm-129.664/bin/:"$PATH"
+  #PATH=/home/leopic/Apps/adt-bundle-linux-x86_64-20130729/sdk/platform-tools:"$PATH"
+  #PATH=/home/leopic/Apps/adt-bundle-linux-x86_64-20130729/sdk/tools:"$PATH"
+  #complete -W "$(teamocil --list)" teamocil
 
   alias apre="sudo /etc/init.d/apache2 restart"
   alias aplog="tail -f /var/log/apache2/error.log"
-  alias ij="/home/leopic/Apps/idea-IU-95.627/bin/./idea.sh"
-  alias tis="/home/leopic/Apps/Titanium_Studio/TitaniumStudio"
-  alias titanium.py=$HOME/.titanium/mobilesdk/linux/3.1.2.GA/titanium.py
+  #alias ij="/home/leopic/Apps/idea-IU-95.627/bin/./idea.sh"
+  #alias tis="/home/leopic/Apps/Titanium_Studio/TitaniumStudio"
+  #alias titanium.py=$HOME/.titanium/mobilesdk/linux/3.1.2.GA/titanium.py
   alias l2="ls -1Fsh --group-directories-first"
   alias open="xdg-open"
   alias myip="ifconfig | grep 'inet addr:' | head -1"
-  alias sath="cd /var/www/athlete/src; export USE_MYSQL=1; sudo pip install -r ../requirements/global.txt; sudo pip install -r ../requirements/dev.txt; python manage.py syncdb; python manage.py migrate; python manage.py runserver;"
-  alias tmath="teamocil ath --here;"  
-  alias tath="java -jar ~/Apps/BrowserStackTunnel.jar 3TUmPOT0CxxeCR6V4KQE localhost,8000,0;"
-
-  # ATG
-  PATH=$PATH:$HOME/bin:$HOME/atgScripts
-  alias satg="$HOME/atgScripts/atg start public_switching"
-  alias katg="$HOME/atgScripts/atg kill-all"
-  alias anta="cd $HOME/workspace/atg-backcountry-ca/modules/; ant all; cd -;"
-  alias antd="cd $HOME/workspace/atg-backcountry-ca/modules/; ant update-data; cd -;"
-  alias antf="cd $HOME/workspace/atg-backcountry-ca/modules/; ant full; cd -;"
-  export ATG_HOME=/opt/atg/atg10.0.1                                                        
-  export JBOSS_HOME=/opt/jboss-eap-5.0/jboss-as
-  export CLASSPATH=.:$JBOSS_HOME/server/ATGProduction/lib/ojdbc6.jar:$CLASSPATH             
-  export DYNAMO_HOME=/opt/atg/atg10.0.1/home                                                
-  export DYNAMO_ROOT=/opt/atg/atg10.0.1                                                     
-  export JAVA_VM=$JAVA_HOME/bin/java
-  export ORACLE_SID=atg
-  export PATH=.$JAVA_HOME/jre/bin:$PATH
-  export PATH=.~/workspace/atg-backcountry-ca/jboss-resources/scripts:$PATH
+  #alias sath="cd /var/www/athlete/src; export USE_MYSQL=1; sudo pip install -r ../requirements/global.txt; sudo pip install -r ../requirements/dev.txt; python manage.py syncdb; python manage.py migrate; python manage.py runserver;"
+  #alias tmath="teamocil ath --here;"  
+  #alias tath="java -jar ~/Apps/BrowserStackTunnel.jar 3TUmPOT0CxxeCR6V4KQE localhost,8000,0;"
 fi
-
-# CentOS only
-if [[ `hostname -s` == "lpicado-atg-dev" ]]; then
-  alias ls="ls --color -F"
-  PATH=$PATH:$HOME/bin:$HOME/atgScripts
-  alias katg="$HOME/atgScripts/atg kill-all"
-  alias ratg="$HOME/atgScripts/atg restart public"
-  alias satg="$HOME/atgScripts/atg start public"
-  alias anta="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant all; cd -;"
-  alias antd="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant update-data; cd -;"
-  alias antf="cd $HOME/workspaces/atg-backcountry-ca/modules/; ant full; cd -;"
-  alias df="git diff develop | pastebin -f diff -a leopic"
-  # avoiding branching gitconfig
-  cd ~/workspaces/atg-backcountry-ca/ && git config user.name "Leo Picado" && git config user.email "lpicado@backcountry.com"
-fi
-
 
 # branch in prompt
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)➔ '
 
-# adding git branch to prompt in DH/Mac
-if [[ `hostname -s` == "dev-mac" ]] || [[ `hostname -s` == "suhail" ]]; then
+# Dreamhost
+if [[ `hostname -s` == "suhail" ]]; then
   __git_ps1 () 
   { 
       local b="$(git symbolic-ref HEAD 2>/dev/null)";
@@ -119,54 +85,26 @@ if [[ `hostname -s` == "dev-mac" ]] || [[ `hostname -s` == "suhail" ]]; then
       fi
   }
   #PS1="\[\e[00;31m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;34m\]\h\[\e[0m\]\[\e[00;37m\]:\W\[\e[0m\]\[\e[01;37m\]>\[\e[0m\]\[\e[00;37m\]\n\[\e[0m\]"
-  #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
-fi
-
-# Dreamhost
-if [[ `hostname -s` == "suhail" ]]; then
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\h\[\033[00m\]:\[\033[00;31m\]\W\[\033[00m\]$(__git_ps1)\$ '
   alias ls="ls --color -F" # colors for ls
   export PYTHONPATH=$PYTHONPATH:/home/leopic/lib/python # adding lib/python to pythonpath
   pystall="python setup.py install --home=~" # install new modules
 fi
 
-# dandole color a los ls en mac
-if [[ `hostname -s` == "lpicados-mbp" || `hostname -s` == "dev-mac" ]]; then
+if [[ `hostname -s` == "leos-mbp" ]]; then
+  # dandole color a los ls en mac
   alias ls="ls -G -F"
   export LSCOLORS=dxfxcxdxbxegedabagacad
-fi
-
-if [[ `hostname -s` == "dev-mac" ]]; then
   export LC_ALL=en_US.UTF-8  
   export LANG=en_US.UTF-8
-  #export NODE_STARTS_CRON=true
-  #export NODE_MINI_STORIES=true
-  export BASEDIR=$HOME/Work/Checkouts/atg
-  export STOREDIR=$BASEDIR/modules/Store
-  export JBOSS_HOME="/Users/lpicado/Work/jboss-eap-5.0/jboss-as"
-  export ATG_HOME="/Users/lpicado/Work/atg/atg10.0.1"
-  export DYNAMO_HOME="$ATG_HOME/home"
-  export PATH="$PATH:/Users/lpicado/Work/Checkouts/atg/jboss-resources/scripts"
+  export PATH=/Users/leo/Apps/arcanist/bin:$PATH
   #export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home"
-  #alias mvntst="cd /Users/lpicado/Sites/falafel; EXPORT JAVA_HOME=\"/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home\"; mvn test; cd -;"
-  alias sclb="java -jar ~/Apps/Sauce-Connect.jar bc_lpicado 475ef286-0787-4b04-ad48-041c89778e60"
-  alias katg="cd /Users/lpicado/Work/Checkouts/atg/jboss-resources/scripts; ./atg kill-all; cd -;"
-  alias satg="cd /Users/lpicado/Work/Checkouts/atg/jboss-resources/scripts; ./atg start public; cd -;"
-  alias tatg="cd /Users/lpicado/Work/Checkouts/atg/jboss-resources/scripts; ./atg tail public; cd -"
-  alias anta="cd /Users/lpicado/Work/Checkouts/atg/modules/; ant all; cd -;"
-  alias antd="cd /Users/lpicado/Work/Checkouts/atg/modules/; ant update-data; cd -;"
-  alias antf="cd /Users/lpicado/Work/Checkouts/atg/modules/; ant full; cd -;"
-  alias bap="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 6.1 --tall --retina -F iphone --liveview; cd -;"
-  alias bap7="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 7.1 --tall --retina --sim-64-btin -F iphone --liveview; cd -;"
-  alias bat="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 6.1 --retina -F ipad --liveview; cd -;"
-  alias bat7="cd /Users/lpicado/Work/Checkouts/bc-mobile-app; ti clean; ti build -p ios -S 7.1 --retina -F ipad --liveview; cd -;"
+  #export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home"
 fi
 
 # Handy to have
 # key is corrupt, permissions to open
 alias fixkey="sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub"
-
-export NODE_ENV='test'
 
 function up {
   if [ "$#" -eq 0 ] ; then
