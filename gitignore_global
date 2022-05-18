@@ -2,7 +2,7 @@
 
 # Compiled source #
 ###################
-*.com
+#*.com
 *.class
 *.dll
 *.exe
@@ -10,6 +10,9 @@
 *.so
 .sass-cache/
 *.gch
+*/twig/.cache/
+*/falafel/tmp/*
+git_stats/
 
 # Logs and such #
 ######################
@@ -28,3 +31,15 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Junk #
+# #### #
+/Users/leo/Sites/blogs/baby/wp-content/themes/minblr/**.*
+/Users/leo/Sites/grid-connect/dolphin-rails/snapshot.sql
+railways.cache
+node_modules/
+**xcuserdata**
+
+## Other
+.env.production
+.env.leo

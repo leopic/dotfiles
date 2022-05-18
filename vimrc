@@ -1,6 +1,4 @@
-" compile, execute after save 
-" autocmd BufWritePost * !~/compile.sh <afile>
-
+" theme
 colorscheme desert
 " line numbers
 set number
@@ -19,9 +17,7 @@ set cursorcolumn
 set laststatus=2
 " turning on syntax highlighting
 syntax on
-" running wild brother
-set wildmenu
-set wildmode=list:longest
+" title
 set title
 " backspace broke wtf!
 set bs=2
@@ -58,72 +54,4 @@ let g:user_zen_settings = {
   \    'extends' : 'html',
   \  },
   \}
-
-" Bundle starts here
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-" Vundle required stuff, don't mess with
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" original repos on github
-Bundle 'pangloss/vim-javascript'
-" git wrapper
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-haml' 
-" autocomplete con tab
-Bundle 'ervandew/supertab'
-" super tab!
-Bundle 'Lokaltog/vim-powerline'
-" zencoding
-Bundle 'mattn/zencoding-vim'
-" autoclose {}'s
-Bundle 'Townk/vim-autoclose' 
-Bundle 'mattn/webapi-vim'
-" :Gist, fawesome
-Bundle 'mattn/gist-vim'
-" syntax highlight for stylus
-Bundle 'wavded/vim-stylus'
-" add C++ support
-Bundle 'Rip-Rip/clang_complete'
-" CSSComb plugin
-Bundle 'miripiruni/CSScomb-for-Vim'
-" Markdown support
-Bundle 'plasticboy/vim-markdown'
-" VIM Livereload
-"Bundle 'flomotlik/vim-livereload'
-" VIM Characterize
-Bundle 'tpope/vim-characterize'
-
-
-" vim-scripts repos
-
-
-Bundle 'L9'
-" kick-ass kinder
-Bundle 'FuzzyFinder'
-
-" restore folds
-Bundle 'restore_view.vim'
-
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
-" ...
-
-filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-"
-" see :h vundle for more details or wiki for FAQ
 
