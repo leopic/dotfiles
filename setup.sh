@@ -13,7 +13,7 @@ check_oh_my_zsh() {
 # Function to install Oh My Zsh
 install_oh_my_zsh() {
     # Install Oh My Zsh
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     
     if [ $? -eq 0 ]; then
         echo "Oh My Zsh installed successfully."
@@ -126,5 +126,5 @@ check_atuin
 #check_nvm
 link_claude
 
-echo "Installation complete! If 'z', 'Atuin', or 'NVM' doesn't work immed"
+echo "Installation complete! If 'z', 'Atuin', or 'NVM' doesn't work immediately, restart your shell."
 

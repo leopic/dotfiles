@@ -11,7 +11,7 @@ alias gundo="git reset --soft HEAD^ && git restore --staged ."
 alias l1="ls -oghF"
 alias log="git log --no-merges --name-only"
 alias ls="ls -G -F"
-alias rebae="git rebase -i main"
+alias rebase="git rebase -i main"
 alias redo="git reset --soft HEAD^ && git reset HEAD ."
 alias rmdir="rm -rf"
 alias tree="git logj"
@@ -19,7 +19,6 @@ alias untar="tar -xzvf"
 
 # exports
 export EDITOR='vim'
-export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 export LANG="en_US.UTF-8"
 
@@ -36,7 +35,7 @@ function up {
     target="../$target"
     times=$((times - 1))
   done
-  cd $target
+  cd "$target"
 }
 
 function gcom() {
@@ -46,3 +45,6 @@ function gcom() {
 # etc
 which vim > /dev/null 2>&1 && alias vi=vim
 
+
+. "$HOME/.local/bin/env"
+export PATH=$PATH:$HOME/.maestro/bin

@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
-const os = require('path');
-const osd = require('os');
+const os = require('os');
 
 const chunks = [];
 process.stdin.on('data', chunk => chunks.push(chunk));
@@ -49,7 +48,7 @@ process.stdin.on('end', () => {
   };
 
   // CWD: abbreviate home to ~
-  const home       = osd.homedir();
+  const home       = os.homedir();
   const cwdDisplay = cwd.startsWith(home) ? '~' + cwd.slice(home.length) : cwd;
 
   // Git branch + dirty flag
