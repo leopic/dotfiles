@@ -110,6 +110,21 @@ install_nvm() {
     fi
 }
 
+check_tmux() {
+    if command -v tmux > /dev/null; then
+        echo "tmux is already installed."
+    else
+        echo "Installing tmux..."
+        brew install tmux
+    fi
+    if command -v teamocil > /dev/null; then
+        echo "teamocil is already installed."
+    else
+        echo "Installing teamocil..."
+        gem install teamocil
+    fi
+}
+
 import_iterm_colors() {
     open "$DOTFILES/argonaut.itermcolors"
     echo "Argonaut iTerm2 colors imported — select it under iTerm2 > Profiles > Colors > Color Presets."
@@ -129,6 +144,7 @@ check_oh_my_zsh
 check_z
 check_atuin
 #check_nvm
+check_tmux
 link_claude
 import_iterm_colors
 

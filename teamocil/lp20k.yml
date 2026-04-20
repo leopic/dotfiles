@@ -1,0 +1,18 @@
+name: lp20k
+windows:
+  - name: editor
+    root: ~/code/lp20k
+    panes:
+      - vim .
+
+  - name: server
+    root: ~/code/lp20k
+    panes:
+      - yarn develop
+
+  - name: shell
+    root: ~/code/lp20k
+    layout: main-vertical
+    panes:
+      - git status
+      - ~
