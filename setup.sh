@@ -110,6 +110,11 @@ install_nvm() {
     fi
 }
 
+import_iterm_colors() {
+    open "$DOTFILES/argonaut.itermcolors"
+    echo "Argonaut iTerm2 colors imported — select it under iTerm2 > Profiles > Colors > Color Presets."
+}
+
 link_claude() {
     mkdir -p "$HOME/.claude"
     ln -sf "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
@@ -125,6 +130,7 @@ check_z
 check_atuin
 #check_nvm
 link_claude
+import_iterm_colors
 
 echo "Installation complete! If 'z', 'Atuin', or 'NVM' doesn't work immediately, restart your shell."
 
