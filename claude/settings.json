@@ -1,0 +1,9 @@
+{
+  "model": "sonnet[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "node $HOME/.claude/statusline.js",
+    "padding": 0
+  },
+  "voiceEnabled": true
+}

@@ -110,11 +110,21 @@ install_nvm() {
     fi
 }
 
+link_claude() {
+    mkdir -p "$HOME/.claude"
+    ln -sf "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
+    ln -sf "$DOTFILES/claude/statusline.js"  "$HOME/.claude/statusline.js"
+    echo "Claude Code config linked."
+}
+
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
+
 # Run the checks
 check_oh_my_zsh
 check_z
 check_atuin
-check_nvm
+#check_nvm
+link_claude
 
-echo "Installation complete! If 'z', 'Atuin', or 'NVM' doesn't work immed
+echo "Installation complete! If 'z', 'Atuin', or 'NVM' doesn't work immed"
 
