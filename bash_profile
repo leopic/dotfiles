@@ -47,5 +47,5 @@ function gcom() {
 which vim > /dev/null 2>&1 && alias vi=vim
 
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 export PATH=$PATH:$HOME/.maestro/bin
