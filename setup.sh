@@ -141,6 +141,16 @@ check_tmux() {
     fi
 }
 
+check_jetbrains_mono() {
+    if brew list --cask font-jetbrains-mono &>/dev/null; then
+        echo "JetBrains Mono is already installed."
+    else
+        echo "JetBrains Mono not found. Installing..."
+        brew install --cask font-jetbrains-mono
+        echo "JetBrains Mono installed — set it in iTerm2 > Profiles > Text > Font."
+    fi
+}
+
 import_iterm_colors() {
     open "$DOTFILES/argonaut.itermcolors"
     echo "Argonaut iTerm2 colors imported — select it under iTerm2 > Profiles > Colors > Color Presets."
@@ -164,6 +174,7 @@ check_atuin
 #check_nvm
 check_tmux
 link_claude
+check_jetbrains_mono
 import_iterm_colors
 
 echo "Installation complete! If 'z', 'Atuin', or 'NVM' doesn't work immediately, restart your shell."
