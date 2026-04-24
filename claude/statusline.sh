@@ -5,6 +5,8 @@
 # Error handling - always output something
 trap 'echo "Claude"' ERR
 
+JQ=$(command -v jq || echo /usr/bin/jq)
+
 BLUE='\033[38;2;0;153;255m'
 ORANGE='\033[38;2;255;176;85m'
 GREEN='\033[38;2;0;160;0m'
@@ -18,13 +20,13 @@ RESET='\033[0m'
 input=$(cat)
 
 # Extract model and context info
-model=$(echo "$input" | /usr/bin/jq -r '.model.display_name // "Unknown"')
-context_size=$(echo "$input" | /usr/bin/jq -r '.context_window.context_window_size // 0')
-used_pct=$(echo "$input" | /usr/bin/jq -r '.context_window.used_percentage // 0')
+model=$(echo "$input" | $JQ -r '.model.display_name // "Unknown"')
+context_size=$(echo "$input" | $JQ -r '.context_window.context_window_size // 0')
+used_pct=$(echo "$input" | $JQ -r '.context_window.used_percentage // 0')
 
 # Working directory relative to home
-cwd=$(echo "$input" | /usr/bin/jq -r '.cwd // ""')
-project_dir=$(echo "$input" | /usr/bin/jq -r '.workspace.project_dir // ""')
+cwd=$(echo "$input" | $JQ -r '.cwd // ""')
+project_dir=$(echo "$input" | $JQ -r '.workspace.project_dir // ""')
 cwd_display="${cwd/#$HOME/~}"
 project_display=""
 if [ -n "$project_dir" ] && [ "$cwd" != "$project_dir" ]; then
@@ -32,10 +34,10 @@ if [ -n "$project_dir" ] && [ "$cwd" != "$project_dir" ]; then
 fi
 
 # Session cost and activity
-total_cost=$(echo "$input" | /usr/bin/jq -r '.cost.total_cost_usd // 0')
-total_api_ms=$(echo "$input" | /usr/bin/jq -r '.cost.total_api_duration_ms // 0')
-lines_added=$(echo "$input" | /usr/bin/jq -r '.cost.total_lines_added // 0')
-lines_removed=$(echo "$input" | /usr/bin/jq -r '.cost.total_lines_removed // 0')
+total_cost=$(echo "$input" | $JQ -r '.cost.total_cost_usd // 0')
+total_api_ms=$(echo "$input" | $JQ -r '.cost.total_api_duration_ms // 0')
+lines_added=$(echo "$input" | $JQ -r '.cost.total_lines_added // 0')
+lines_removed=$(echo "$input" | $JQ -r '.cost.total_lines_removed // 0')
 
 cost_display=$(printf '$%.4f' "$total_cost")
 api_sec=$((total_api_ms / 1000))
@@ -46,10 +48,10 @@ else
 fi
 
 # Calculate current token usage
-input_tokens=$(echo "$input" | /usr/bin/jq -r '.context_window.current_usage.input_tokens // 0')
-output_tokens=$(echo "$input" | /usr/bin/jq -r '.context_window.current_usage.output_tokens // 0')
-cache_creation=$(echo "$input" | /usr/bin/jq -r '.context_window.current_usage.cache_creation_input_tokens // 0')
-cache_read=$(echo "$input" | /usr/bin/jq -r '.context_window.current_usage.cache_read_input_tokens // 0')
+input_tokens=$(echo "$input" | $JQ -r '.context_window.current_usage.input_tokens // 0')
+output_tokens=$(echo "$input" | $JQ -r '.context_window.current_usage.output_tokens // 0')
+cache_creation=$(echo "$input" | $JQ -r '.context_window.current_usage.cache_creation_input_tokens // 0')
+cache_read=$(echo "$input" | $JQ -r '.context_window.current_usage.cache_read_input_tokens // 0')
 
 current_tokens=$((input_tokens + output_tokens + cache_creation + cache_read))
 
@@ -107,7 +109,7 @@ context_bar=$(build_context_bar $used_pct)
 # Check effort level from settings
 effort_level="medium"
 if [ -f "$HOME/.claude/settings.json" ]; then
-    effort_level=$(cat "$HOME/.claude/settings.json" | /usr/bin/jq -r '.effortLevel // "medium"')
+    effort_level=$(cat "$HOME/.claude/settings.json" | $JQ -r '.effortLevel // "medium"')
 fi
 
 case "$effort_level" in
@@ -177,10 +179,10 @@ build_bar() {
 }
 
 # Extract rate limits from the JSON blob (Unix timestamps)
-current_pct=$(echo "$input" | /usr/bin/jq -r '.rate_limits.five_hour.used_percentage // 0')
-current_reset_epoch=$(echo "$input" | /usr/bin/jq -r '.rate_limits.five_hour.resets_at // 0')
-weekly_pct=$(echo "$input" | /usr/bin/jq -r '.rate_limits.seven_day.used_percentage // 0')
-weekly_reset_epoch=$(echo "$input" | /usr/bin/jq -r '.rate_limits.seven_day.resets_at // 0')
+current_pct=$(echo "$input" | $JQ -r '.rate_limits.five_hour.used_percentage // 0')
+current_reset_epoch=$(echo "$input" | $JQ -r '.rate_limits.five_hour.resets_at // 0')
+weekly_pct=$(echo "$input" | $JQ -r '.rate_limits.seven_day.used_percentage // 0')
+weekly_reset_epoch=$(echo "$input" | $JQ -r '.rate_limits.seven_day.resets_at // 0')
 
 current_bar=$(build_bar $current_pct)
 weekly_bar=$(build_bar $weekly_pct)
