@@ -191,20 +191,7 @@ weekly_bar=$(build_bar $weekly_pct)
 current_reset_fmt=$(date -r "$current_reset_epoch" "+%H:%M" 2>/dev/null || echo "N/A")
 weekly_reset_fmt=$(date -r "$weekly_reset_epoch" "+%b %d %H:%M" 2>/dev/null || echo "N/A")
 
-# Line 2: All three progress bars
-printf "${DIM}ctx${RESET} %b ${DIM}|${RESET} ${YELLOW}5h:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s |${RESET} ${YELLOW}7d:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s${RESET}\n" \
-    "$context_bar" "$current_bar" "$current_pct" "$current_reset_fmt" "$weekly_bar" "$weekly_pct" "$weekly_reset_fmt"
-
-# Line 3: Cost, activity, token volume
-input_display=$(format_tokens $input_tokens)
-output_display=$(format_tokens $output_tokens)
-cache_creation_display=$(format_tokens $cache_creation)
-cache_read_display=$(format_tokens $cache_read)
-printf "${CYAN}%s${RESET} ${DIM}|${RESET} ${BLUE}api${RESET} ${CYAN}%s${RESET} ${DIM}|${RESET} ${YELLOW}tokens:${RESET} ${CYAN}%s${RESET} ${DIM}in,${RESET} ${CYAN}%s${RESET} ${DIM}out,${RESET} ${CYAN}%s${RESET} ${DIM}cw,${RESET} ${CYAN}%s${RESET} ${DIM}cr${RESET}\n" \
-    "$cost_display" "$api_duration_display" \
-    "$input_display" "$output_display" "$cache_creation_display" "$cache_read_display"
-
-# Line 4: cwd | branch | lines added/removed
+# Line 2: cwd | branch | lines added/removed
 if [ -n "$project_display" ]; then
     cwd_part="${cwd_display} ${DIM}(proj: ${project_display})${RESET}"
 else
@@ -217,3 +204,16 @@ else
     printf "${CYAN}%b${RESET} ${DIM}|${RESET} ${GREEN}+%s${RESET} ${RED}-%s${RESET}\n" \
         "$cwd_part" "$lines_added" "$lines_removed"
 fi
+
+# Line 3: All three progress bars
+printf "${DIM}ctx${RESET} %b ${DIM}|${RESET} ${YELLOW}5h:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s |${RESET} ${YELLOW}7d:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s${RESET}\n" \
+    "$context_bar" "$current_bar" "$current_pct" "$current_reset_fmt" "$weekly_bar" "$weekly_pct" "$weekly_reset_fmt"
+
+# Line 4: Cost, activity, token volume
+input_display=$(format_tokens $input_tokens)
+output_display=$(format_tokens $output_tokens)
+cache_creation_display=$(format_tokens $cache_creation)
+cache_read_display=$(format_tokens $cache_read)
+printf "${CYAN}%s${RESET} ${DIM}|${RESET} ${BLUE}api${RESET} ${CYAN}%s${RESET} ${DIM}|${RESET} ${YELLOW}tokens:${RESET} ${CYAN}%s${RESET} ${DIM}in,${RESET} ${CYAN}%s${RESET} ${DIM}out,${RESET} ${CYAN}%s${RESET} ${DIM}cw,${RESET} ${CYAN}%s${RESET} ${DIM}cr${RESET}\n" \
+    "$cost_display" "$api_duration_display" \
+    "$input_display" "$output_display" "$cache_creation_display" "$cache_read_display"
