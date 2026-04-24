@@ -148,8 +148,9 @@ import_iterm_colors() {
 
 link_claude() {
     mkdir -p "$HOME/.claude"
-    ln -sf "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
-    ln -sf "$DOTFILES/claude/statusline.js"  "$HOME/.claude/statusline.js"
+    ln -sf "$DOTFILES/claude/settings.json"  "$HOME/.claude/settings.json"
+    ln -sf "$DOTFILES/claude/statusline.sh"  "$HOME/.claude/statusline.sh"
+    chmod +x "$DOTFILES/claude/statusline.sh"
     echo "Claude Code config linked."
 }
 
