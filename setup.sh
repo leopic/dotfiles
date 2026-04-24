@@ -117,11 +117,27 @@ check_tmux() {
         echo "Installing tmux..."
         brew install tmux
     fi
-    if command -v teamocil > /dev/null; then
+
+    # macOS system Ruby is SIP-protected; use Homebrew Ruby instead
+    if ! brew list ruby &>/dev/null; then
+        echo "Installing Homebrew Ruby..."
+        brew install ruby
+    fi
+
+    BREW_GEM="$(brew --prefix ruby)/bin/gem"
+
+    if "$BREW_GEM" list teamocil -i &>/dev/null; then
         echo "teamocil is already installed."
     else
         echo "Installing teamocil..."
-        gem install teamocil
+        "$BREW_GEM" install teamocil
+    fi
+
+    # Ensure Homebrew Ruby bin is on PATH in .zshrc
+    RUBY_BIN_LINE='export PATH="$(brew --prefix ruby)/bin:$PATH"'
+    if ! grep -qF 'brew --prefix ruby' "$HOME/.zshrc"; then
+        echo "$RUBY_BIN_LINE" >> "$HOME/.zshrc"
+        echo "Added Homebrew Ruby to PATH in .zshrc — restart your shell or run: source ~/.zshrc"
     fi
 }
 
