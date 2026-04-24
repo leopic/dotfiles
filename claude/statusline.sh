@@ -151,10 +151,24 @@ if git_branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --sho
     fi
 fi
 
-# Line 1: user@hostname | Model (effort) | Tokens
+# Line 1: user@hostname | cwd | branch | +/- lines
 host_display="$(whoami)@$(hostname -s)"
-printf "%s ${DIM}|${RESET} ${BLUE}%s${RESET} ${DIM}(${RESET}%b${DIM}) |${RESET} ${ORANGE}%s${RESET} ${DIM}/${RESET} ${ORANGE}%s${RESET}\n" \
-    "$host_display" "$model" "$effort_status" "$current_display" "$total_display"
+if [ -n "$project_display" ]; then
+    cwd_part="${cwd_display} ${DIM}(proj: ${project_display})${RESET}"
+else
+    cwd_part="$cwd_display"
+fi
+if [ -n "$git_info" ]; then
+    printf "%s ${DIM}|${RESET} ${CYAN}%b${RESET} ${DIM}|${RESET} %b ${DIM}|${RESET} ${GREEN}+%s${RESET} ${RED}-%s${RESET}\n" \
+        "$host_display" "$cwd_part" "$git_info" "$lines_added" "$lines_removed"
+else
+    printf "%s ${DIM}|${RESET} ${CYAN}%b${RESET} ${DIM}|${RESET} ${GREEN}+%s${RESET} ${RED}-%s${RESET}\n" \
+        "$host_display" "$cwd_part" "$lines_added" "$lines_removed"
+fi
+
+# Line 2: Model (effort) | Tokens
+printf "${BLUE}%s${RESET} ${DIM}(${RESET}%b${DIM}) |${RESET} ${ORANGE}%s${RESET} ${DIM}/${RESET} ${ORANGE}%s${RESET}\n" \
+    "$model" "$effort_status" "$current_display" "$total_display"
 
 # Function to build progress bar
 build_bar() {
@@ -190,20 +204,6 @@ weekly_bar=$(build_bar $weekly_pct)
 
 current_reset_fmt=$(date -r "$current_reset_epoch" "+%H:%M" 2>/dev/null || echo "N/A")
 weekly_reset_fmt=$(date -r "$weekly_reset_epoch" "+%b %d %H:%M" 2>/dev/null || echo "N/A")
-
-# Line 2: cwd | branch | lines added/removed
-if [ -n "$project_display" ]; then
-    cwd_part="${cwd_display} ${DIM}(proj: ${project_display})${RESET}"
-else
-    cwd_part="$cwd_display"
-fi
-if [ -n "$git_info" ]; then
-    printf "${CYAN}%b${RESET} ${DIM}|${RESET} %b ${DIM}|${RESET} ${GREEN}+%s${RESET} ${RED}-%s${RESET}\n" \
-        "$cwd_part" "$git_info" "$lines_added" "$lines_removed"
-else
-    printf "${CYAN}%b${RESET} ${DIM}|${RESET} ${GREEN}+%s${RESET} ${RED}-%s${RESET}\n" \
-        "$cwd_part" "$lines_added" "$lines_removed"
-fi
 
 # Line 3: All three progress bars
 printf "${DIM}ctx${RESET} %b ${DIM}|${RESET} ${YELLOW}5h:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s |${RESET} ${YELLOW}7d:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s${RESET}\n" \
