@@ -130,8 +130,8 @@ if git_branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --sho
         ahead=$(echo "$upstream_counts" | awk '{print $1}')
         behind=$(echo "$upstream_counts" | awk '{print $2}')
         sync_info=""
-        [ "$ahead" -gt 0 ] && sync_info="${sync_info}${GREEN}↑${ahead}${RESET}"
-        [ "$behind" -gt 0 ] && sync_info="${sync_info}${RED}↓${behind}${RESET}"
+        [ "$ahead" -gt 0 ] && sync_info="${sync_info} ${GREEN}↑${ahead}${RESET}"
+        [ "$behind" -gt 0 ] && sync_info="${sync_info} ${RED}↓${behind}${RESET}"
         [ -n "$sync_info" ] && git_info="${git_info}${sync_info}"
     fi
 
