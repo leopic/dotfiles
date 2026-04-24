@@ -153,7 +153,7 @@ fi
 
 # Line 1: user@hostname | Model (effort) | Tokens
 host_display="$(whoami)@$(hostname -s)"
-printf "${DIM}%s${RESET} ${DIM}|${RESET} ${BLUE}%s${RESET} ${DIM}(${RESET}%b${DIM}) |${RESET} ${ORANGE}%s${RESET} ${DIM}/${RESET} ${ORANGE}%s${RESET}\n" \
+printf "%s ${DIM}|${RESET} ${BLUE}%s${RESET} ${DIM}(${RESET}%b${DIM}) |${RESET} ${ORANGE}%s${RESET} ${DIM}/${RESET} ${ORANGE}%s${RESET}\n" \
     "$host_display" "$model" "$effort_status" "$current_display" "$total_display"
 
 # Function to build progress bar
