@@ -1,0 +1,704 @@
+{
+  "words": [
+    {
+      "word": "die Wohnung",
+      "article": "die",
+      "plural": "die Wohnungen",
+      "theme": "Wohnen",
+      "seen": true
+    },
+    {
+      "word": "der Mieter",
+      "article": "der",
+      "plural": "die Mieter",
+      "theme": "Wohnen",
+      "seen": true
+    },
+    {
+      "word": "die Miete",
+      "article": "die",
+      "plural": "die Mieten",
+      "theme": "Wohnen",
+      "seen": false
+    },
+    {
+      "word": "das Erdgeschoss",
+      "article": "das",
+      "plural": "die Erdgeschosse",
+      "theme": "Wohnen",
+      "seen": false
+    },
+    {
+      "word": "der Aufzug",
+      "article": "der",
+      "plural": "die Aufz\u00fcge",
+      "theme": "Wohnen",
+      "seen": false
+    },
+    {
+      "word": "die Heizung",
+      "article": "die",
+      "plural": "die Heizungen",
+      "theme": "Wohnen",
+      "seen": false
+    },
+    {
+      "word": "der Nachbar",
+      "article": "der",
+      "plural": "die Nachbarn",
+      "theme": "Wohnen",
+      "seen": false
+    },
+    {
+      "word": "das Klingeln",
+      "article": "das",
+      "plural": null,
+      "theme": "Wohnen",
+      "seen": false
+    },
+    {
+      "word": "der Vertrag",
+      "article": "der",
+      "plural": "die Vertr\u00e4ge",
+      "theme": "Wohnen",
+      "seen": false
+    },
+    {
+      "word": "die Kaution",
+      "article": "die",
+      "plural": "die Kautionen",
+      "theme": "Wohnen",
+      "seen": false
+    },
+    {
+      "word": "die Bewerbung",
+      "article": "die",
+      "plural": "die Bewerbungen",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "der Lebenslauf",
+      "article": "der",
+      "plural": "die Lebensl\u00e4ufe",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "das Gehalt",
+      "article": "das",
+      "plural": "die Geh\u00e4lter",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "die Stelle",
+      "article": "die",
+      "plural": "die Stellen",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "der Urlaub",
+      "article": "der",
+      "plural": "die Urlaube",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "die \u00dcberstunde",
+      "article": "die",
+      "plural": "die \u00dcberstunden",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "der Kollege",
+      "article": "der",
+      "plural": "die Kollegen",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "die K\u00fcndigung",
+      "article": "die",
+      "plural": "die K\u00fcndigungen",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "das Vorstellungsgespr\u00e4ch",
+      "article": "das",
+      "plural": "die Vorstellungsgespr\u00e4che",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "die Ausbildung",
+      "article": "die",
+      "plural": "die Ausbildungen",
+      "theme": "Arbeit",
+      "seen": false
+    },
+    {
+      "word": "der Arzt",
+      "article": "der",
+      "plural": "die \u00c4rzte",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "die Krankenkasse",
+      "article": "die",
+      "plural": "die Krankenkassen",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "das Rezept",
+      "article": "das",
+      "plural": "die Rezepte",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "die Apotheke",
+      "article": "die",
+      "plural": "die Apotheken",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "der Termin",
+      "article": "der",
+      "plural": "die Termine",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "die Allergie",
+      "article": "die",
+      "plural": "die Allergien",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "das Krankenhaus",
+      "article": "das",
+      "plural": "die Krankenh\u00e4user",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "die Untersuchung",
+      "article": "die",
+      "plural": "die Untersuchungen",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "der Notfall",
+      "article": "der",
+      "plural": "die Notf\u00e4lle",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "die Sprechstunde",
+      "article": "die",
+      "plural": "die Sprechstunden",
+      "theme": "Gesundheit",
+      "seen": false
+    },
+    {
+      "word": "der Bahnhof",
+      "article": "der",
+      "plural": "die Bahnh\u00f6fe",
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "die Versp\u00e4tung",
+      "article": "die",
+      "plural": "die Versp\u00e4tungen",
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "das Gep\u00e4ck",
+      "article": "das",
+      "plural": null,
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "die Unterkunft",
+      "article": "die",
+      "plural": "die Unterk\u00fcnfte",
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "der Reisepass",
+      "article": "der",
+      "plural": "die Reisep\u00e4sse",
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "die Abfahrt",
+      "article": "die",
+      "plural": "die Abfahrten",
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "die Ankunft",
+      "article": "die",
+      "plural": "die Ank\u00fcnfte",
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "das Abteil",
+      "article": "das",
+      "plural": "die Abteile",
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "die Fahrkarte",
+      "article": "die",
+      "plural": "die Fahrkarten",
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "der Zoll",
+      "article": "der",
+      "plural": null,
+      "theme": "Reisen",
+      "seen": false
+    },
+    {
+      "word": "die Grundschule",
+      "article": "die",
+      "plural": "die Grundschulen",
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "das Zeugnis",
+      "article": "das",
+      "plural": "die Zeugnisse",
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "der Abschluss",
+      "article": "der",
+      "plural": "die Abschl\u00fcsse",
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "die Pr\u00fcfung",
+      "article": "die",
+      "plural": "die Pr\u00fcfungen",
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "das Stipendium",
+      "article": "das",
+      "plural": "die Stipendien",
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "der Unterricht",
+      "article": "der",
+      "plural": null,
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "die Hausaufgabe",
+      "article": "die",
+      "plural": "die Hausaufgaben",
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "das Praktikum",
+      "article": "das",
+      "plural": "die Praktika",
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "der Stundenplan",
+      "article": "der",
+      "plural": "die Stundenpl\u00e4ne",
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "die Berufsschule",
+      "article": "die",
+      "plural": "die Berufsschulen",
+      "theme": "Bildung",
+      "seen": false
+    },
+    {
+      "word": "das Ehrenamt",
+      "article": "das",
+      "plural": "die Ehren\u00e4mter",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "die Staatsangeh\u00f6rigkeit",
+      "article": "die",
+      "plural": "die Staatsangeh\u00f6rigkeiten",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "der Antrag",
+      "article": "der",
+      "plural": "die Antr\u00e4ge",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "die Beh\u00f6rde",
+      "article": "die",
+      "plural": "die Beh\u00f6rden",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "das Formular",
+      "article": "das",
+      "plural": "die Formulare",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "die Genehmigung",
+      "article": "die",
+      "plural": "die Genehmigungen",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "der Personalausweis",
+      "article": "der",
+      "plural": "die Personalausweise",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "die Steuer",
+      "article": "die",
+      "plural": "die Steuern",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "das Amt",
+      "article": "das",
+      "plural": "die \u00c4mter",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "die Versicherung",
+      "article": "die",
+      "plural": "die Versicherungen",
+      "theme": "Gesellschaft",
+      "seen": false
+    },
+    {
+      "word": "die Freizeit",
+      "article": "die",
+      "plural": null,
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "der Verein",
+      "article": "der",
+      "plural": "die Vereine",
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "das Konzert",
+      "article": "das",
+      "plural": "die Konzerte",
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "die Veranstaltung",
+      "article": "die",
+      "plural": "die Veranstaltungen",
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "der Eintritt",
+      "article": "der",
+      "plural": "die Eintritte",
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "das Hobby",
+      "article": "das",
+      "plural": "die Hobbys",
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "der Ausflug",
+      "article": "der",
+      "plural": "die Ausfl\u00fcge",
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "die Ausstellung",
+      "article": "die",
+      "plural": "die Ausstellungen",
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "die Mannschaft",
+      "article": "die",
+      "plural": "die Mannschaften",
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "das Mitglied",
+      "article": "das",
+      "plural": "die Mitglieder",
+      "theme": "Freizeit",
+      "seen": false
+    },
+    {
+      "word": "der Abfall",
+      "article": "der",
+      "plural": "die Abf\u00e4lle",
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "die Umwelt",
+      "article": "die",
+      "plural": null,
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "der Strom",
+      "article": "der",
+      "plural": null,
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "das Recycling",
+      "article": "das",
+      "plural": null,
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "die Energie",
+      "article": "die",
+      "plural": "die Energien",
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "der Klimawandel",
+      "article": "der",
+      "plural": null,
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "das Verkehrsmittel",
+      "article": "das",
+      "plural": "die Verkehrsmittel",
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "die M\u00fclltrennung",
+      "article": "die",
+      "plural": null,
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "das Fahrrad",
+      "article": "das",
+      "plural": "die Fahrr\u00e4der",
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "die Nachhaltigkeit",
+      "article": "die",
+      "plural": null,
+      "theme": "Umwelt",
+      "seen": false
+    },
+    {
+      "word": "der Einkauf",
+      "article": "der",
+      "plural": "die Eink\u00e4ufe",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "die Rechnung",
+      "article": "die",
+      "plural": "die Rechnungen",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "das Konto",
+      "article": "das",
+      "plural": "die Konten",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "die \u00dcberweisung",
+      "article": "die",
+      "plural": "die \u00dcberweisungen",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "der Kassenbon",
+      "article": "der",
+      "plural": "die Kassenbons",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "die \u00d6ffnungszeit",
+      "article": "die",
+      "plural": "die \u00d6ffnungszeiten",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "der Supermarkt",
+      "article": "der",
+      "plural": "die Superm\u00e4rkte",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "die Warteschlange",
+      "article": "die",
+      "plural": "die Warteschlangen",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "das Angebot",
+      "article": "das",
+      "plural": "die Angebote",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "die Beschwerde",
+      "article": "die",
+      "plural": "die Beschwerden",
+      "theme": "Alltag",
+      "seen": false
+    },
+    {
+      "word": "die Mahlzeit",
+      "article": "die",
+      "plural": "die Mahlzeiten",
+      "theme": "Essen",
+      "seen": false
+    },
+    {
+      "word": "das Gericht",
+      "article": "das",
+      "plural": "die Gerichte",
+      "theme": "Essen",
+      "seen": false
+    },
+    {
+      "word": "die Speisekarte",
+      "article": "die",
+      "plural": "die Speisekarten",
+      "theme": "Essen",
+      "seen": false
+    },
+    {
+      "word": "der Hunger",
+      "article": "der",
+      "plural": null,
+      "theme": "Essen",
+      "seen": false
+    },
+    {
+      "word": "die Zubereitung",
+      "article": "die",
+      "plural": "die Zubereitungen",
+      "theme": "Essen",
+      "seen": false
+    },
+    {
+      "word": "das Rezept",
+      "article": "das",
+      "plural": "die Rezepte",
+      "theme": "Essen",
+      "seen": false
+    },
+    {
+      "word": "die Zutat",
+      "article": "die",
+      "plural": "die Zutaten",
+      "theme": "Essen",
+      "seen": false
+    },
+    {
+      "word": "der Geschmack",
+      "article": "der",
+      "plural": "die Geschm\u00e4cker",
+      "theme": "Essen",
+      "seen": false
+    },
+    {
+      "word": "die Portion",
+      "article": "die",
+      "plural": "die Portionen",
+      "theme": "Essen",
+      "seen": false
+    },
+    {
+      "word": "das Trinkgeld",
+      "article": "das",
+      "plural": "die Trinkgelder",
+      "theme": "Essen",
+      "seen": false
+    }
+  ]
+}
