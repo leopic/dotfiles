@@ -1,14 +1,15 @@
 {
-  "read_count": 2,
-  "last_vocab_timestamp": 1777537852.7001832,
-  "session_mode": 0,
+  "read_count": 4,
+  "last_vocab_timestamp": 1777551982.05569,
+  "session_mode": 1,
   "words_seen": [
     "die Wohnung",
     "der Mieter",
     "die Miete",
     "die Bewerbung",
     "der Lebenslauf",
-    "das Gehalt"
+    "das Gehalt",
+    "die Stelle"
   ],
   "grammar_topics_seen": [
     "Konjunktiv II",
