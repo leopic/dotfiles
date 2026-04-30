@@ -1,10 +1,13 @@
 {
-  "read_count": 2,
-  "last_vocab_timestamp": 1777532169.325357,
-  "session_mode": 2,
+  "read_count": 4,
+  "last_vocab_timestamp": 1777533391.605542,
+  "session_mode": 0,
   "words_seen": [
     "die Wohnung",
-    "der Mieter"
+    "der Mieter",
+    "die Miete"
   ],
-  "grammar_topics_seen": []
+  "grammar_topics_seen": [
+    "Konjunktiv II"
+  ]
 }
