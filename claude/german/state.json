@@ -1,12 +1,13 @@
 {
-  "read_count": 0,
-  "last_vocab_timestamp": 1777534329.157634,
-  "session_mode": 1,
+  "read_count": 2,
+  "last_vocab_timestamp": 1777535187.291519,
+  "session_mode": 2,
   "words_seen": [
     "die Wohnung",
     "der Mieter",
     "die Miete",
-    "die Bewerbung"
+    "die Bewerbung",
+    "der Lebenslauf"
   ],
   "grammar_topics_seen": [
     "Konjunktiv II"
