@@ -1,16 +1,18 @@
 {
-  "read_count": 4,
-  "last_vocab_timestamp": 1777535187.291519,
-  "session_mode": 2,
+  "read_count": 2,
+  "last_vocab_timestamp": 1777537852.7001832,
+  "session_mode": 0,
   "words_seen": [
     "die Wohnung",
     "der Mieter",
     "die Miete",
     "die Bewerbung",
-    "der Lebenslauf"
+    "der Lebenslauf",
+    "das Gehalt"
   ],
   "grammar_topics_seen": [
-    "Konjunktiv II"
+    "Konjunktiv II",
+    "Perfekt vs Pr\u00e4teritum"
   ],
   "activity_since_last_vocab": 0
 }
