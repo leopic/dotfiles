@@ -1,9 +1,53 @@
 {
   "model": "sonnet[1m]",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/.claude/german/trigger.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/.claude/german/activity.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/.claude/german/activity.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/.claude/german/activity.sh"
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "$HOME/.claude/statusline.sh",
     "padding": 0
   },
-  "voiceEnabled": true
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
+  },
+  "voiceEnabled": true,
+  "agentPushNotifEnabled": true
 }

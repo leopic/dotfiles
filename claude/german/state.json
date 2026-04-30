@@ -1,5 +1,5 @@
 {
-  "read_count": 2,
+  "read_count": 4,
   "last_vocab_timestamp": 1777535187.291519,
   "session_mode": 2,
   "words_seen": [
@@ -11,5 +11,6 @@
   ],
   "grammar_topics_seen": [
     "Konjunktiv II"
-  ]
+  ],
+  "activity_since_last_vocab": 0
 }
