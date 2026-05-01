@@ -26,12 +26,12 @@
       "article": "das",
       "plural": "die Erdgeschosse",
       "theme": "Wohnen",
-      "seen": false
+      "seen": true
     },
     {
       "word": "der Aufzug",
       "article": "der",
-      "plural": "die Aufz\u00fcge",
+      "plural": "die Aufzüge",
       "theme": "Wohnen",
       "seen": false
     },
@@ -59,7 +59,7 @@
     {
       "word": "der Vertrag",
       "article": "der",
-      "plural": "die Vertr\u00e4ge",
+      "plural": "die Verträge",
       "theme": "Wohnen",
       "seen": false
     },
@@ -80,14 +80,14 @@
     {
       "word": "der Lebenslauf",
       "article": "der",
-      "plural": "die Lebensl\u00e4ufe",
+      "plural": "die Lebensläufe",
       "theme": "Arbeit",
       "seen": true
     },
     {
       "word": "das Gehalt",
       "article": "das",
-      "plural": "die Geh\u00e4lter",
+      "plural": "die Gehälter",
       "theme": "Arbeit",
       "seen": true
     },
@@ -106,9 +106,9 @@
       "seen": false
     },
     {
-      "word": "die \u00dcberstunde",
+      "word": "die Überstunde",
       "article": "die",
-      "plural": "die \u00dcberstunden",
+      "plural": "die Überstunden",
       "theme": "Arbeit",
       "seen": false
     },
@@ -120,16 +120,16 @@
       "seen": false
     },
     {
-      "word": "die K\u00fcndigung",
+      "word": "die Kündigung",
       "article": "die",
-      "plural": "die K\u00fcndigungen",
+      "plural": "die Kündigungen",
       "theme": "Arbeit",
       "seen": false
     },
     {
-      "word": "das Vorstellungsgespr\u00e4ch",
+      "word": "das Vorstellungsgespräch",
       "article": "das",
-      "plural": "die Vorstellungsgespr\u00e4che",
+      "plural": "die Vorstellungsgespräche",
       "theme": "Arbeit",
       "seen": false
     },
@@ -143,7 +143,7 @@
     {
       "word": "der Arzt",
       "article": "der",
-      "plural": "die \u00c4rzte",
+      "plural": "die Ärzte",
       "theme": "Gesundheit",
       "seen": false
     },
@@ -185,7 +185,7 @@
     {
       "word": "das Krankenhaus",
       "article": "das",
-      "plural": "die Krankenh\u00e4user",
+      "plural": "die Krankenhäuser",
       "theme": "Gesundheit",
       "seen": false
     },
@@ -199,7 +199,7 @@
     {
       "word": "der Notfall",
       "article": "der",
-      "plural": "die Notf\u00e4lle",
+      "plural": "die Notfälle",
       "theme": "Gesundheit",
       "seen": false
     },
@@ -213,19 +213,19 @@
     {
       "word": "der Bahnhof",
       "article": "der",
-      "plural": "die Bahnh\u00f6fe",
+      "plural": "die Bahnhöfe",
       "theme": "Reisen",
       "seen": false
     },
     {
-      "word": "die Versp\u00e4tung",
+      "word": "die Verspätung",
       "article": "die",
-      "plural": "die Versp\u00e4tungen",
+      "plural": "die Verspätungen",
       "theme": "Reisen",
       "seen": false
     },
     {
-      "word": "das Gep\u00e4ck",
+      "word": "das Gepäck",
       "article": "das",
       "plural": null,
       "theme": "Reisen",
@@ -234,14 +234,14 @@
     {
       "word": "die Unterkunft",
       "article": "die",
-      "plural": "die Unterk\u00fcnfte",
+      "plural": "die Unterkünfte",
       "theme": "Reisen",
       "seen": false
     },
     {
       "word": "der Reisepass",
       "article": "der",
-      "plural": "die Reisep\u00e4sse",
+      "plural": "die Reisepässe",
       "theme": "Reisen",
       "seen": false
     },
@@ -255,7 +255,7 @@
     {
       "word": "die Ankunft",
       "article": "die",
-      "plural": "die Ank\u00fcnfte",
+      "plural": "die Ankünfte",
       "theme": "Reisen",
       "seen": false
     },
@@ -297,14 +297,14 @@
     {
       "word": "der Abschluss",
       "article": "der",
-      "plural": "die Abschl\u00fcsse",
+      "plural": "die Abschlüsse",
       "theme": "Bildung",
       "seen": false
     },
     {
-      "word": "die Pr\u00fcfung",
+      "word": "die Prüfung",
       "article": "die",
-      "plural": "die Pr\u00fcfungen",
+      "plural": "die Prüfungen",
       "theme": "Bildung",
       "seen": false
     },
@@ -339,7 +339,7 @@
     {
       "word": "der Stundenplan",
       "article": "der",
-      "plural": "die Stundenpl\u00e4ne",
+      "plural": "die Stundenpläne",
       "theme": "Bildung",
       "seen": false
     },
@@ -353,28 +353,28 @@
     {
       "word": "das Ehrenamt",
       "article": "das",
-      "plural": "die Ehren\u00e4mter",
+      "plural": "die Ehrenämter",
       "theme": "Gesellschaft",
       "seen": false
     },
     {
-      "word": "die Staatsangeh\u00f6rigkeit",
+      "word": "die Staatsangehörigkeit",
       "article": "die",
-      "plural": "die Staatsangeh\u00f6rigkeiten",
+      "plural": "die Staatsangehörigkeiten",
       "theme": "Gesellschaft",
       "seen": false
     },
     {
       "word": "der Antrag",
       "article": "der",
-      "plural": "die Antr\u00e4ge",
+      "plural": "die Anträge",
       "theme": "Gesellschaft",
       "seen": false
     },
     {
-      "word": "die Beh\u00f6rde",
+      "word": "die Behörde",
       "article": "die",
-      "plural": "die Beh\u00f6rden",
+      "plural": "die Behörden",
       "theme": "Gesellschaft",
       "seen": false
     },
@@ -409,7 +409,7 @@
     {
       "word": "das Amt",
       "article": "das",
-      "plural": "die \u00c4mter",
+      "plural": "die Ämter",
       "theme": "Gesellschaft",
       "seen": false
     },
@@ -465,7 +465,7 @@
     {
       "word": "der Ausflug",
       "article": "der",
-      "plural": "die Ausfl\u00fcge",
+      "plural": "die Ausflüge",
       "theme": "Freizeit",
       "seen": false
     },
@@ -493,7 +493,7 @@
     {
       "word": "der Abfall",
       "article": "der",
-      "plural": "die Abf\u00e4lle",
+      "plural": "die Abfälle",
       "theme": "Umwelt",
       "seen": false
     },
@@ -540,7 +540,7 @@
       "seen": false
     },
     {
-      "word": "die M\u00fclltrennung",
+      "word": "die Mülltrennung",
       "article": "die",
       "plural": null,
       "theme": "Umwelt",
@@ -549,7 +549,7 @@
     {
       "word": "das Fahrrad",
       "article": "das",
-      "plural": "die Fahrr\u00e4der",
+      "plural": "die Fahrräder",
       "theme": "Umwelt",
       "seen": false
     },
@@ -563,7 +563,7 @@
     {
       "word": "der Einkauf",
       "article": "der",
-      "plural": "die Eink\u00e4ufe",
+      "plural": "die Einkäufe",
       "theme": "Alltag",
       "seen": false
     },
@@ -582,9 +582,9 @@
       "seen": false
     },
     {
-      "word": "die \u00dcberweisung",
+      "word": "die Überweisung",
       "article": "die",
-      "plural": "die \u00dcberweisungen",
+      "plural": "die Überweisungen",
       "theme": "Alltag",
       "seen": false
     },
@@ -596,16 +596,16 @@
       "seen": false
     },
     {
-      "word": "die \u00d6ffnungszeit",
+      "word": "die Öffnungszeit",
       "article": "die",
-      "plural": "die \u00d6ffnungszeiten",
+      "plural": "die Öffnungszeiten",
       "theme": "Alltag",
       "seen": false
     },
     {
       "word": "der Supermarkt",
       "article": "der",
-      "plural": "die Superm\u00e4rkte",
+      "plural": "die Supermärkte",
       "theme": "Alltag",
       "seen": false
     },
@@ -682,7 +682,7 @@
     {
       "word": "der Geschmack",
       "article": "der",
-      "plural": "die Geschm\u00e4cker",
+      "plural": "die Geschmäcker",
       "theme": "Essen",
       "seen": false
     },
