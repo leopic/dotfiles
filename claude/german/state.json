@@ -1,8 +1,14 @@
 {
-  "sessions_completed": 0,
-  "recent_wechsel": [],
-  "recent_fixed_verbs": [],
-  "recent_pure": [],
-  "last_session_timestamp": 0,
+  "sessions_completed": 1,
+  "recent_wechsel": [
+    "in"
+  ],
+  "recent_fixed_verbs": [
+    "warten auf"
+  ],
+  "recent_pure": [
+    "durch"
+  ],
+  "last_session_timestamp": 1777916441,
   "read_count": 0
 }
