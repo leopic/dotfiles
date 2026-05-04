@@ -1,14 +1,17 @@
 {
-  "sessions_completed": 1,
+  "sessions_completed": 2,
   "recent_wechsel": [
+    "auf",
     "in"
   ],
   "recent_fixed_verbs": [
+    "sich freuen auf",
     "warten auf"
   ],
   "recent_pure": [
+    "mit",
     "durch"
   ],
-  "last_session_timestamp": 1777916441,
+  "last_session_timestamp": 1777916672,
   "read_count": 0
 }
