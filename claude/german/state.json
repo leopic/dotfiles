@@ -1,7 +1,10 @@
 {
   "session_mode": 1,
-  "words_seen": ["die Bewerbung"],
+  "words_seen": [
+    "die Bewerbung"
+  ],
   "grammar_topics_seen": [],
   "last_vocab_timestamp": 1777884338,
-  "activity_since_last_vocab": 0
+  "activity_since_last_vocab": 6,
+  "read_count": 1
 }

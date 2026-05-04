@@ -161,7 +161,13 @@ link_claude() {
     ln -sf "$DOTFILES/claude/settings.json"  "$HOME/.claude/settings.json"
     ln -sf "$DOTFILES/claude/statusline.sh"  "$HOME/.claude/statusline.sh"
     ln -sf "$DOTFILES/claude/CLAUDE.md"      "$HOME/.claude/CLAUDE.md"
+    ln -sf "$DOTFILES/claude/commands"       "$HOME/.claude/commands"
+    # german/ must be a real directory symlink, not a file symlink — remove first if needed
+    [ -d "$HOME/.claude/german" ] && [ ! -L "$HOME/.claude/german" ] && rm -rf "$HOME/.claude/german"
+    ln -sf "$DOTFILES/claude/german"         "$HOME/.claude/german"
     chmod +x "$DOTFILES/claude/statusline.sh"
+    chmod +x "$DOTFILES/claude/german/activity.sh"
+    chmod +x "$DOTFILES/claude/german/trigger.sh"
     echo "Claude Code config linked."
 }
 
