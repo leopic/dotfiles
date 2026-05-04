@@ -1,12 +1,12 @@
 {
-  "sessions_completed": 4,
+  "sessions_completed": 5,
   "phase": 1,
   "phases_completed": [],
   "active_prepositions": ["mit", "bei", "von"],
   "mastery": {
-    "mit": { "der": 0, "die": 1, "das": 1 },
-    "bei": { "der": 0, "die": 1, "das": 1 },
-    "von": { "der": 1, "die": 0, "das": 0 }
+    "mit": { "der": 1, "die": 2, "das": 1 },
+    "bei": { "der": 1, "die": 1, "das": 1 },
+    "von": { "der": 1, "die": 1, "das": 1 }
   },
-  "last_session_timestamp": 1746399600
+  "last_session_timestamp": 1746403200
 }
