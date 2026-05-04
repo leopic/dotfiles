@@ -1,17 +1,7 @@
 {
-  "sessions_completed": 2,
-  "recent_wechsel": [
-    "auf",
-    "in"
-  ],
-  "recent_fixed_verbs": [
-    "sich freuen auf",
-    "warten auf"
-  ],
-  "recent_pure": [
-    "mit",
-    "durch"
-  ],
-  "last_session_timestamp": 1777916672,
-  "read_count": 0
+  "sessions_completed": 3,
+  "recent_wechsel": ["unter", "auf", "in"],
+  "recent_fixed_verbs": ["sich erinnern an", "sich freuen auf", "warten auf"],
+  "recent_pure": ["seit", "mit", "durch"],
+  "last_session_timestamp": 1746395400
 }
