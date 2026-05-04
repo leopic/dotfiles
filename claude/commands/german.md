@@ -20,7 +20,7 @@ Pick one from this pool (avoid `recent_wechsel`):
 
 `an, auf, in, über, unter, vor, hinter, neben, zwischen`
 
-Decide whether to test the **Dativ** (location) or **Akkusativ** (direction) form — vary this across sessions. Compose a natural B1-level sentence where Leo fills in the correct article form for the noun that follows the preposition (e.g. `___ Tisch` → `dem Tisch` or `den Tisch`).
+Decide whether to test the **Dativ** (location) or **Akkusativ** (direction) form — vary this across sessions. Compose a natural B1-level sentence where Leo fills in the correct article form for the noun that follows the preposition (e.g. `___ Tisch` → `dem Tisch` or `den Tisch`). Show the nominative form of the noun in the prompt (e.g. `(der Tisch)`) so Leo can work out the case change himself.
 
 ### Exercise B — Fixed verb preposition (Präpositionalergänzung)
 
@@ -30,7 +30,7 @@ Pick one from this pool (avoid `recent_fixed_verbs`):
 
 **→ Dativ:** träumen von, helfen bei, fragen nach, sich beschäftigen mit, rechnen mit, Angst haben vor, abhängen von
 
-Compose a sentence where Leo must supply the preposition + correct article form in the blank.
+Compose a sentence where Leo must supply the preposition + correct article form in the blank. Show the nominative form of the noun in the prompt (e.g. `(der Bus)`) so Leo can work out the case change himself.
 
 ### Exercise C — Pure preposition
 
@@ -39,7 +39,7 @@ Pick one from this pool (avoid `recent_pure`):
 **Always Dativ:** aus, bei, mit, nach, seit, von, zu, gegenüber
 **Always Akkusativ:** durch, für, gegen, ohne, um
 
-Compose a sentence where Leo supplies the correct article form in the blank.
+Compose a sentence where Leo supplies the correct article form in the blank. Show the nominative form of the noun in the prompt (e.g. `(die Stadt)`) so Leo can work out the case change himself.
 
 ## Step 3 — Run the session
 
@@ -58,7 +58,7 @@ After each answer, give the **full correction block** before moving on.
 📌  Dativ   = location   (wo?   / where is it?)
     Akkusativ = direction  (wohin? / where is it going?)
 
-"[Sentence with ___ blank for the article]"
+"[Sentence with ___ blank for the article]"  ([nominative form, e.g. der Tisch])
 
 ❓  Welchen Artikel brauchst du?
 ```
@@ -69,8 +69,6 @@ After each answer, give the **full correction block** before moving on.
 [✓ Richtig! or ✗ Nicht ganz — it's: [correct answer]]
 
 📖  Why: [1–2 sentences: name the case, state whether this is location or movement, and show the full correct phrase]
-
-🇪🇸  Spanish bridge: [Explain what Spanish does here — typically 'en' covers both location and destination with no article change, so the German case distinction has no direct parallel. Give the Spanish equivalent sentence.]
 
 🧠  Hook: [A short pattern to lock it in. E.g.: "stellen/legen/hängen/setzen = Akkusativ (you're placing something somewhere new). stehen/liegen/hängen/sitzen = Dativ (it's already there)."]
 ```
@@ -85,7 +83,7 @@ After each answer, give the **full correction block** before moving on.
 ─────────────────────────────────
 📌  This verb always locks in: [preposition] + [Dativ / Akkusativ]
 
-"[Sentence with ___ blank for the preposition + article or pronoun]"
+"[Sentence with ___ blank for the preposition + article or pronoun]"  ([nominative form of the noun, e.g. der Bus])
 
 ❓  Welche Präposition und welche Form?
 ```
@@ -96,8 +94,6 @@ After each answer, give the **full correction block** before moving on.
 [✓ Richtig! or ✗ Nicht ganz — it's: [correct answer]]
 
 📖  Why: [Explain that this verb's preposition is fixed — it doesn't follow general rules, it must be memorized as a unit: verb + preposition + case.]
-
-🇪🇸  Spanish bridge: [Show the Spanish equivalent verb and what preposition/structure it uses. Highlight where Spanish and German diverge — e.g. 'esperar' takes a direct object or 'esperar a' for people, while 'warten' requires 'auf + Akkusativ' regardless.]
 
 🧠  Hook: [A short phrase linking the verb to its preposition. E.g.: "warten → you wait FOR something → auf + Akk. Think: 'Waiting FOR the bus' = auf den Bus."]
 ```
@@ -112,7 +108,7 @@ After each answer, give the **full correction block** before moving on.
 ─────────────────────────────────
 📌  [preposition] always takes [case] — no exceptions.
 
-"[Sentence with ___ blank]"
+"[Sentence with ___ blank]"  ([nominative form of the noun, e.g. die Stadt])
 
 ❓  Welche Form brauchst du?
 ```
@@ -123,8 +119,6 @@ After each answer, give the **full correction block** before moving on.
 [✓ Richtig! or ✗ Nicht ganz — it's: [correct answer]]
 
 📖  Why: [Brief explanation. For Dativ-only: these prepositions describe relationships, origin, or accompaniment — never destination. For Akkusativ-only: these describe passage through, purpose, or opposition — always directed.]
-
-🇪🇸  Spanish bridge: [Spanish equivalent and any traps. E.g.: 'seit drei Jahren' = 'desde hace tres años' — Spanish needs two words where German uses one; 'durch den Park' = 'por el parque' — 'por' is a rough equivalent but doesn't carry the same case obligation.]
 
 🧠  Hook: [A short mnemonic. Classic one for Dativ-only: "aus, bei, mit, nach, seit, von, zu, gegenüber" — these never take Akkusativ.]
 ```
