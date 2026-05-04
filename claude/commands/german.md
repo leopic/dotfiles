@@ -2,149 +2,175 @@ You are running the German B1 prepositions drill for Leo. Follow these steps exa
 
 ## Step 1 — Read state
 
-Read `~/.claude/german/state.json`. Expected fields:
-- `sessions_completed` — total completed sessions
-- `recent_wechsel` — recently used Wechselpräpositionen (e.g. `["in", "auf"]`)
-- `recent_fixed_verbs` — recently used verb+preposition combos (e.g. `["warten auf", "träumen von"]`)
-- `recent_pure` — recently used pure prepositions (e.g. `["aus", "mit"]`)
-
-If the file has the old vocabulary schema (fields like `session_mode`, `words_seen`), treat all recent arrays as empty — the schema has changed and will be rewritten in Step 4.
-
-## Step 2 — Pick exercises
-
-Pick one item per type below, avoiding anything already in the corresponding recent list.
-
-### Exercise A — Wechselpräposition (two-way preposition)
-
-Pick one from this pool (avoid `recent_wechsel`):
-
-`an, auf, in, über, unter, vor, hinter, neben, zwischen`
-
-Decide whether to test the **Dativ** (location) or **Akkusativ** (direction) form — vary this across sessions. Compose a natural B1-level sentence where Leo fills in the correct article form for the noun that follows the preposition (e.g. `___ Tisch` → `dem Tisch` or `den Tisch`). Show the nominative form of the noun in the prompt (e.g. `(der Tisch)`) so Leo can work out the case change himself.
-
-### Exercise B — Fixed verb preposition (Präpositionalergänzung)
-
-Pick one from this pool (avoid `recent_fixed_verbs`):
-
-**→ Akkusativ:** warten auf, denken an, sich freuen auf (anticipated future), sich freuen über (received/past), sprechen über, sich erinnern an, sich interessieren für, sich ärgern über, sich entscheiden für, achten auf, sich kümmern um
-
-**→ Dativ:** träumen von, helfen bei, fragen nach, sich beschäftigen mit, rechnen mit, Angst haben vor, abhängen von
-
-Compose a sentence where Leo must supply the preposition + correct article form in the blank. Show the nominative form of the noun in the prompt (e.g. `(der Bus)`) so Leo can work out the case change himself.
-
-### Exercise C — Pure preposition
-
-Pick one from this pool (avoid `recent_pure`):
-
-**Always Dativ:** aus, bei, mit, nach, seit, von, zu, gegenüber
-**Always Akkusativ:** durch, für, gegen, ohne, um
-
-Compose a sentence where Leo supplies the correct article form in the blank. Show the nominative form of the noun in the prompt (e.g. `(die Stadt)`) so Leo can work out the case change himself.
-
-## Step 3 — Run the session
-
-Present exercises **one at a time**. Do not show exercise B until Leo has answered A. Do not show C until Leo has answered B.
-
-After each answer, give the **full correction block** before moving on.
-
----
-
-### Exercise A format
-
-```
-─────────────────────────────────
-🔄  WECHSELPRÄPOSITION — [PREPOSITION]  ·  [WO? or WOHIN?]
-─────────────────────────────────
-📌  Dativ   = location   (wo?   / where is it?)
-    Akkusativ = direction  (wohin? / where is it going?)
-
-"[Sentence with ___ blank for the article]"  ([nominative form, e.g. der Tisch])
-
-❓  Welchen Artikel brauchst du?
-```
-
-**After Leo answers:**
-
-```
-[✓ Richtig! or ✗ Nicht ganz — it's: [correct answer]]
-
-📖  Why: [1–2 sentences: name the case, state whether this is location or movement, and show the full correct phrase]
-
-🧠  Hook: [A short pattern to lock it in. E.g.: "stellen/legen/hängen/setzen = Akkusativ (you're placing something somewhere new). stehen/liegen/hängen/sitzen = Dativ (it's already there)."]
-```
-
----
-
-### Exercise B format
-
-```
-─────────────────────────────────
-🔗  VERBPRÄPOSITION — [VERB] + [PREPOSITION]
-─────────────────────────────────
-📌  This verb always locks in: [preposition] + [Dativ / Akkusativ]
-
-"[Sentence with ___ blank for the preposition + article or pronoun]"  ([nominative form of the noun, e.g. der Bus])
-
-❓  Welche Präposition und welche Form?
-```
-
-**After Leo answers:**
-
-```
-[✓ Richtig! or ✗ Nicht ganz — it's: [correct answer]]
-
-📖  Why: [Explain that this verb's preposition is fixed — it doesn't follow general rules, it must be memorized as a unit: verb + preposition + case.]
-
-🧠  Hook: [A short phrase linking the verb to its preposition. E.g.: "warten → you wait FOR something → auf + Akk. Think: 'Waiting FOR the bus' = auf den Bus."]
-```
-
----
-
-### Exercise C format
-
-```
-─────────────────────────────────
-📍  PRÄPOSITION — [PREPOSITION]  ·  ALWAYS [DATIV / AKKUSATIV]
-─────────────────────────────────
-📌  [preposition] always takes [case] — no exceptions.
-
-"[Sentence with ___ blank]"  ([nominative form of the noun, e.g. die Stadt])
-
-❓  Welche Form brauchst du?
-```
-
-**After Leo answers:**
-
-```
-[✓ Richtig! or ✗ Nicht ganz — it's: [correct answer]]
-
-📖  Why: [Brief explanation. For Dativ-only: these prepositions describe relationships, origin, or accompaniment — never destination. For Akkusativ-only: these describe passage through, purpose, or opposition — always directed.]
-
-🧠  Hook: [A short mnemonic. Classic one for Dativ-only: "aus, bei, mit, nach, seit, von, zu, gegenüber" — these never take Akkusativ.]
-```
-
----
-
-## Step 4 — Update state
-
-After Leo has answered all 3 exercises, write `~/.claude/german/state.json` with the **new schema only** — discard any old vocabulary fields:
+Read `~/.claude/german/state.json`. Expected schema:
 
 ```json
 {
-  "sessions_completed": [old value + 1],
-  "recent_wechsel": [prepend used preposition, keep last 5],
-  "recent_fixed_verbs": [prepend used combo, keep last 8],
-  "recent_pure": [prepend used preposition, keep last 6],
+  "sessions_completed": 3,
+  "phase": 1,
+  "phases_completed": [],
+  "active_prepositions": ["mit", "bei", "von"],
+  "mastery": {
+    "mit": { "der": 0, "die": 0, "das": 0 },
+    "bei": { "der": 0, "die": 0, "das": 0 },
+    "von": { "der": 0, "die": 0, "das": 0 }
+  },
+  "last_session_timestamp": 0
+}
+```
+
+If the file has the old schema (fields like `recent_wechsel`, `recent_pure`, `recent_fixed_verbs`), discard it and initialize fresh with the Phase 1 defaults above (preserving `sessions_completed` if present).
+
+---
+
+## Step 2 — Phase map
+
+| Phase | Prepositions | Case rule |
+|-------|--------------|-----------|
+| 1 | mit, bei, von | always Dativ |
+| 2 | aus, nach, zu | always Dativ |
+| 3 | seit, gegenüber | always Dativ |
+| 4 | durch, für, gegen | always Akkusativ |
+| 5 | ohne, um | always Akkusativ |
+| 6 | an, auf, in | Wechsel — both Dativ and Akkusativ |
+| 7 | über, unter, vor | Wechsel |
+| 8 | hinter, neben, zwischen | Wechsel |
+
+**Mastery threshold:** 3 correct answers per combo. Incorrect answers do not decrement.
+
+**Combos per phase:**
+- Phases 1–5: `preposition × gender` → 3 combos per preposition (der, die, das)
+- Phases 6–8: `preposition × gender × case` → 6 combos per preposition (der/Dat, der/Akk, die/Dat, die/Akk, das/Dat, das/Akk)
+
+---
+
+## Step 3 — Article forms reference
+
+**Dativ:** der → dem · die → der · das → dem
+
+**Akkusativ:** der → den · die → die · das → das
+
+**Common contractions (use these when natural):**
+- von dem = vom · bei dem = beim · zu dem = zum · zu der = zur
+- an dem = am · an das = ans · in dem = im · in das = ins
+
+---
+
+## Step 4 — Pick questions
+
+1. List all combos for the current phase's `active_prepositions`.
+2. Filter to unmastered combos (count < 3), sorted by count ascending (weakest first).
+3. Pick **5 combos** from that list. If fewer than 5 unmastered combos remain, pad with the lowest-count mastered combos as review.
+4. For each combo, compose a natural B1-level German sentence where Leo fills in the correct article (or contraction) for the noun following the preposition. Show the nominative form of the noun in parentheses. Use varied, everyday nouns — not the same noun across the session.
+
+Example (mit + das → dem):
+> "Ich fahre jeden Tag mit ___ Fahrrad zur Arbeit."  (das Fahrrad)
+
+---
+
+## Step 5 — Show progress header
+
+Before question 1, display:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Phase N — [e.g. "Dativ: mit · bei · von"]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Progress  (● correct · ○ needed · ✓ mastered)
+
+  mit   der ●●○  die ○○○  das ●○○
+  bei   der ○○○  die ●●●✓ das ●○○
+  von   der ○○○  die ○○○  das ●●○
+
+5 questions this session.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+For Wechsel phases (6–8), show Dativ and Akkusativ separately:
+
+```
+  an    der/D ○○○  der/A ○○○  die/D ○○○  die/A ○○○  das/D ○○○  das/A ○○○
+```
+
+---
+
+## Step 6 — Run the session
+
+Present questions **one at a time**. Do not show the next question until Leo has answered the current one.
+
+### Question format
+
+```
+─────────────────────────────────────
+❓ [N/5]  [PREPOSITION]  ·  noun gender: [der/die/das]
+─────────────────────────────────────
+"[Sentence with ___ blank]"  ([nominative noun])
+```
+
+### After each answer
+
+```
+[✓ Richtig! — or — ✗ Nicht ganz — it's: [correct answer]]
+
+📖 Why: [1 sentence naming the case and rule, e.g. "mit always takes Dativ, and der Zug (m) → dem Zug."]
+🧠 Hook: [1-line mnemonic, e.g. "mit · bei · von · zu · aus · nach · seit · gegenüber — all always Dativ."]
+
+[preposition] · [gender]  [updated pip string, e.g. ●●○ (2/3)]
+```
+
+Only increment the mastery count if Leo's answer was correct. Track the session's results in memory — you will write them all at the end.
+
+---
+
+## Step 7 — Session summary
+
+After all 5 answers, show:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Session complete — N/5 correct
+
+Updated progress:
+  mit   der ●●●✓  die ●○○  das ●●○
+  bei   der ●○○   die ●●●✓ das ●●○
+  von   der ○○○   die ○○○  das ●●●✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+**Phase completion check:** if every combo for every active preposition now has count ≥ 3, show:
+
+```
+🎉 Phase N mastered! You've nailed: [preposition list]
+Next up → Phase N+1: [new prepositions]  ([case rule])
+```
+
+Then advance: increment `phase`, set `active_prepositions` to the next phase's prepositions, reset `mastery` to all zeros for the new prepositions, and append the completed phase number to `phases_completed`.
+
+If there is no Phase 9, show a completion message instead: "🏆 All phases complete — you've mastered the German preposition system!"
+
+---
+
+## Step 8 — Update state
+
+Write `~/.claude/german/state.json` with the updated values:
+
+```json
+{
+  "sessions_completed": [old + 1],
+  "phase": [current or advanced],
+  "phases_completed": [...],
+  "active_prepositions": [...],
+  "mastery": { "...updated counts..." },
   "last_session_timestamp": [current unix timestamp]
 }
 ```
 
-## Step 5 — Sync progress to dotfiles
+---
+
+## Step 9 — Sync
 
 Run this exact command (no confirmation needed):
 
 ```bash
 cd ~/dotfiles && git add claude/german/state.json && git diff --cached --quiet || git commit -m "chore(german): sync b1 progress" && git push
 ```
-
-Only `state.json` is staged. `wordlist.json` is no longer used and should not be touched.

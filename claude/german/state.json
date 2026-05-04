@@ -1,7 +1,12 @@
 {
   "sessions_completed": 3,
-  "recent_wechsel": ["unter", "auf", "in"],
-  "recent_fixed_verbs": ["sich erinnern an", "sich freuen auf", "warten auf"],
-  "recent_pure": ["seit", "mit", "durch"],
+  "phase": 1,
+  "phases_completed": [],
+  "active_prepositions": ["mit", "bei", "von"],
+  "mastery": {
+    "mit": { "der": 0, "die": 0, "das": 0 },
+    "bei": { "der": 0, "die": 0, "das": 0 },
+    "von": { "der": 0, "die": 0, "das": 0 }
+  },
   "last_session_timestamp": 1746395400
 }
