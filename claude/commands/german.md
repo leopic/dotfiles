@@ -1,115 +1,156 @@
-You are running the German B1 vocabulary skill for Leo. Follow these steps exactly.
+You are running the German B1 prepositions drill for Leo. Follow these steps exactly.
 
 ## Step 1 — Read state
 
-Read `~/.claude/german/state.json` to get:
-- `session_mode` (0 = vocabulary, 1 = cases, 2 = grammar)
-- `words_seen` (array of words already shown)
-- `grammar_topics_seen` (array of grammar categories already covered)
+Read `~/.claude/german/state.json`. Expected fields:
+- `sessions_completed` — total completed sessions
+- `recent_wechsel` — recently used Wechselpräpositionen (e.g. `["in", "auf"]`)
+- `recent_fixed_verbs` — recently used verb+preposition combos (e.g. `["warten auf", "träumen von"]`)
+- `recent_pure` — recently used pure prepositions (e.g. `["aus", "mit"]`)
 
-Read `~/.claude/german/wordlist.json` to get the word list.
+If the file has the old vocabulary schema (fields like `session_mode`, `words_seen`), treat all recent arrays as empty — the schema has changed and will be rewritten in Step 4.
 
-## Step 2 — Pick a word
+## Step 2 — Pick exercises
 
-Select a word where `seen` is false. If all words have been seen, pick the one least recently used (last in `words_seen`). Prefer words from a theme not recently used. Do not randomize — work through themes systematically.
+Pick one item per type below, avoiding anything already in the corresponding recent list.
 
-## Step 3 — Run the session based on mode
+### Exercise A — Wechselpräposition (two-way preposition)
 
----
+Pick one from this pool (avoid `recent_wechsel`):
 
-### Mode 0 — Vocabulary
+`an, auf, in, über, unter, vor, hinter, neben, zwischen`
 
-Present the word in this exact format:
+Decide whether to test the **Dativ** (location) or **Akkusativ** (direction) form — vary this across sessions. Compose a natural B1-level sentence where Leo fills in the correct article form for the noun that follows the preposition (e.g. `___ Tisch` → `dem Tisch` or `den Tisch`).
 
-```
-─────────────────────────────────
-🇩🇪  [WORD WITH ARTICLE]  · [THEME]
-─────────────────────────────────
-📖  [1–2 sentence definition entirely in German, B1 level]
+### Exercise B — Fixed verb preposition (Präpositionalergänzung)
 
-💬  "[A natural B1-level example sentence using the word]"
+Pick one from this pool (avoid `recent_fixed_verbs`):
 
-❓  Was bedeutet dieses Wort auf Englisch?
-```
+**→ Akkusativ:** warten auf, denken an, sich freuen auf (anticipated future), sich freuen über (received/past), sprechen über, sich erinnern an, sich interessieren für, sich ärgern über, sich entscheiden für, achten auf, sich kümmern um
 
-Wait for Leo's answer. Then confirm or correct and move on naturally.
+**→ Dativ:** träumen von, helfen bei, fragen nach, sich beschäftigen mit, rechnen mit, Angst haben vor, abhängen von
 
----
+Compose a sentence where Leo must supply the preposition + correct article form in the blank.
 
-### Mode 1 — Cases (Dativ / Akkusativ / Nominativ / Genitiv)
+### Exercise C — Pure preposition
 
-Use the word you picked and build a fill-in-the-blank exercise that targets one of the four cases. Vary which case you test. Also consider testing two-way prepositions (an, auf, in, über, unter, vor, hinter, neben, zwischen) when relevant — these take Dativ for location and Akkusativ for movement.
+Pick one from this pool (avoid `recent_pure`):
 
-Format:
+**Always Dativ:** aus, bei, mit, nach, seit, von, zu, gegenüber
+**Always Akkusativ:** durch, für, gegen, ohne, um
 
-```
-─────────────────────────────────
-📐  FÄLLE — [CASE NAME]
-─────────────────────────────────
-Ergänze die Lücke mit der richtigen Form:
+Compose a sentence where Leo supplies the correct article form in the blank.
 
-"[Sentence with ___ where Leo must supply the correct form of the word or article]"
+## Step 3 — Run the session
 
-💡  Tipp: [one short hint about the rule, in English]
-```
+Present exercises **one at a time**. Do not show exercise B until Leo has answered A. Do not show C until Leo has answered B.
 
-Wait for Leo's answer. Correct and explain briefly — show the right form and why.
+After each answer, give the **full correction block** before moving on.
 
 ---
 
-### Mode 2 — Grammar grab-bag
-
-Pick the grammar category from this list that appears least in `grammar_topics_seen`:
-- Konjunktiv II (würde, könnte, hätte, wäre)
-- Perfekt vs Präteritum (which verbs prefer which tense)
-- Reflexive Verben (sich freuen, sich vorstellen, etc.)
-- Subordinierende Konjunktionen (weil, obwohl, damit, dass, wenn, als)
-- Trennbare Verben (word order with separable prefix verbs)
-- Adjektivdeklination (adjective endings with definite/indefinite article)
-- Modalverben (müssen, dürfen, sollen, wollen, können, mögen)
-- Passiv (wird gemacht, wurde gemacht)
-
-Build a short exercise using the word you picked from the list. Keep it to one clear question.
-
-Format:
+### Exercise A format
 
 ```
 ─────────────────────────────────
-📝  GRAMMATIK — [CATEGORY]
+🔄  WECHSELPRÄPOSITION — [PREPOSITION]  ·  [WO? or WOHIN?]
 ─────────────────────────────────
-[Short explanation of the rule in English, 1–2 sentences]
+📌  Dativ   = location   (wo?   / where is it?)
+    Akkusativ = direction  (wohin? / where is it going?)
 
-Aufgabe: [clear task — fill in, transform, or choose]
+"[Sentence with ___ blank for the article]"
 
-"[Exercise sentence or prompt]"
+❓  Welchen Artikel brauchst du?
 ```
 
-Wait for Leo's answer. Correct and give a brief explanation.
+**After Leo answers:**
+
+```
+[✓ Richtig! or ✗ Nicht ganz — it's: [correct answer]]
+
+📖  Why: [1–2 sentences: name the case, state whether this is location or movement, and show the full correct phrase]
+
+🇪🇸  Spanish bridge: [Explain what Spanish does here — typically 'en' covers both location and destination with no article change, so the German case distinction has no direct parallel. Give the Spanish equivalent sentence.]
+
+🧠  Hook: [A short pattern to lock it in. E.g.: "stellen/legen/hängen/setzen = Akkusativ (you're placing something somewhere new). stehen/liegen/hängen/sitzen = Dativ (it's already there)."]
+```
+
+---
+
+### Exercise B format
+
+```
+─────────────────────────────────
+🔗  VERBPRÄPOSITION — [VERB] + [PREPOSITION]
+─────────────────────────────────
+📌  This verb always locks in: [preposition] + [Dativ / Akkusativ]
+
+"[Sentence with ___ blank for the preposition + article or pronoun]"
+
+❓  Welche Präposition und welche Form?
+```
+
+**After Leo answers:**
+
+```
+[✓ Richtig! or ✗ Nicht ganz — it's: [correct answer]]
+
+📖  Why: [Explain that this verb's preposition is fixed — it doesn't follow general rules, it must be memorized as a unit: verb + preposition + case.]
+
+🇪🇸  Spanish bridge: [Show the Spanish equivalent verb and what preposition/structure it uses. Highlight where Spanish and German diverge — e.g. 'esperar' takes a direct object or 'esperar a' for people, while 'warten' requires 'auf + Akkusativ' regardless.]
+
+🧠  Hook: [A short phrase linking the verb to its preposition. E.g.: "warten → you wait FOR something → auf + Akk. Think: 'Waiting FOR the bus' = auf den Bus."]
+```
+
+---
+
+### Exercise C format
+
+```
+─────────────────────────────────
+📍  PRÄPOSITION — [PREPOSITION]  ·  ALWAYS [DATIV / AKKUSATIV]
+─────────────────────────────────
+📌  [preposition] always takes [case] — no exceptions.
+
+"[Sentence with ___ blank]"
+
+❓  Welche Form brauchst du?
+```
+
+**After Leo answers:**
+
+```
+[✓ Richtig! or ✗ Nicht ganz — it's: [correct answer]]
+
+📖  Why: [Brief explanation. For Dativ-only: these prepositions describe relationships, origin, or accompaniment — never destination. For Akkusativ-only: these describe passage through, purpose, or opposition — always directed.]
+
+🇪🇸  Spanish bridge: [Spanish equivalent and any traps. E.g.: 'seit drei Jahren' = 'desde hace tres años' — Spanish needs two words where German uses one; 'durch den Park' = 'por el parque' — 'por' is a rough equivalent but doesn't carry the same case obligation.]
+
+🧠  Hook: [A short mnemonic. Classic one for Dativ-only: "aus, bei, mit, nach, seit, von, zu, gegenüber" — these never take Akkusativ.]
+```
 
 ---
 
 ## Step 4 — Update state
 
-After Leo answers (do not update before), write back to `~/.claude/german/state.json`:
-- Increment `session_mode` by 1 (wrap: 0→1→2→0)
-- Add the word to `words_seen` if not already there
-- Mark `seen: true` for the word in wordlist.json
-- If mode was 2, add the grammar category to `grammar_topics_seen`
-- Update `last_vocab_timestamp` to current unix time
-- Reset `activity_since_last_vocab` to 0
+After Leo has answered all 3 exercises, write `~/.claude/german/state.json` with the **new schema only** — discard any old vocabulary fields:
 
-Keep the session light. One word, one exercise, done. Do not chain multiple exercises in one session.
-
----
+```json
+{
+  "sessions_completed": [old value + 1],
+  "recent_wechsel": [prepend used preposition, keep last 5],
+  "recent_fixed_verbs": [prepend used combo, keep last 8],
+  "recent_pure": [prepend used preposition, keep last 6],
+  "last_session_timestamp": [current unix timestamp]
+}
+```
 
 ## Step 5 — Sync progress to dotfiles
 
-After state is written, run this exact bash command (no confirmation needed):
+Run this exact command (no confirmation needed):
 
 ```bash
-cd ~/dotfiles && git add claude/german/state.json claude/german/wordlist.json && git diff --cached --quiet || git commit -m "chore(german): sync b1 progress" && git push
+cd ~/dotfiles && git add claude/german/state.json && git diff --cached --quiet || git commit -m "chore(german): sync b1 progress" && git push
 ```
 
-- Only these two files are ever staged — nothing else in the repo is touched.
-- If there are no changes (e.g. nothing was marked seen), the `git diff --cached --quiet` check skips the commit silently.
-- Do not change directory back — the user's shell cwd is unaffected since this runs in a subshell.
+Only `state.json` is staged. `wordlist.json` is no longer used and should not be touched.

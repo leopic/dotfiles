@@ -1,10 +1,8 @@
 {
-  "session_mode": 1,
-  "words_seen": [
-    "die Bewerbung"
-  ],
-  "grammar_topics_seen": [],
-  "last_vocab_timestamp": 1777884338,
-  "activity_since_last_vocab": 6,
-  "read_count": 1
+  "sessions_completed": 0,
+  "recent_wechsel": [],
+  "recent_fixed_verbs": [],
+  "recent_pure": [],
+  "last_session_timestamp": 0,
+  "read_count": 0
 }
