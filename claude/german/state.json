@@ -26,5 +26,13 @@
       "das": 2
     }
   },
+  "preposition_mastery": {
+    "mit": 0,
+    "bei": 0,
+    "von": 0,
+    "aus": 0,
+    "nach": 0,
+    "zu": 0
+  },
   "last_session_timestamp": 1778000844
 }
