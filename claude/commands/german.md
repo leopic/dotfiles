@@ -160,16 +160,21 @@ Write `~/.claude/german/state.json` with the updated values:
   "phase": [current or advanced],
   "phases_completed": [...],
   "active_prepositions": [...],
-  "mastery": { "...updated counts..." },
-  "last_session_timestamp": [current unix timestamp]
+  "mastery": { "...updated counts..." }
 }
 ```
 
+`last_session_timestamp` is stamped by the bash command in Step 9 — do not set it here.
+
 ---
 
-## Step 9 — Sync
+## Step 9 — Stamp timestamp and sync
 
-Run this exact command (no confirmation needed):
+Run these exact commands (no confirmation needed):
+
+```bash
+jq --argjson ts $(date +%s) '.last_session_timestamp = $ts' ~/.claude/german/state.json > /tmp/german_state_tmp.json && mv /tmp/german_state_tmp.json ~/.claude/german/state.json
+```
 
 ```bash
 cd ~/dotfiles && git add claude/german/state.json && git diff --cached --quiet || git commit -m "chore(german): sync b1 progress" && git push

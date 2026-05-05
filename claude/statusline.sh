@@ -231,6 +231,17 @@ if [ -f "$GERMAN_STATE" ]; then
         fi
     done
 
-    printf "🇩🇪  ${ORANGE}P%s/8${RESET}  ${CYAN}%s${RESET}  %b  ${DIM}%s/%s mastered · %s sessions${RESET}\n" \
-        "$g_phase" "$g_preps" "$g_bar" "$g_mastered" "$g_total" "$g_sessions"
+    # Show a prompt when the 10-minute cooldown has elapsed
+    g_due=""
+    GERMAN_REMINDER="$HOME/.claude/german/last_reminder.txt"
+    if [ -f "$GERMAN_REMINDER" ]; then
+        g_last=$(cat "$GERMAN_REMINDER" 2>/dev/null || echo 0)
+        g_elapsed=$(( $(date +%s) - g_last ))
+        if [ $g_elapsed -ge 600 ]; then
+            g_due="  \033[1m${ORANGE}▶ /german${RESET}"
+        fi
+    fi
+
+    printf "🇩🇪  ${ORANGE}P%s/8${RESET}  ${CYAN}%s${RESET}  %b  ${DIM}%s/%s mastered · %s sessions${RESET}%b\n" \
+        "$g_phase" "$g_preps" "$g_bar" "$g_mastered" "$g_total" "$g_sessions" "$g_due"
 fi
