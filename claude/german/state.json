@@ -1,12 +1,12 @@
 {
-  "sessions_completed": 10,
+  "sessions_completed": 11,
   "phase": 2,
   "phases_completed": [1],
   "active_prepositions": ["aus", "nach", "zu"],
   "mastery": {
-    "aus": { "der": 1, "die": 1, "das": 1 },
-    "nach": { "der": 1, "die": 1, "das": 0 },
-    "zu": { "der": 0, "die": 0, "das": 0 }
+    "aus": { "der": 1, "die": 2, "das": 1 },
+    "nach": { "der": 1, "die": 1, "das": 1 },
+    "zu": { "der": 1, "die": 1, "das": 1 }
   },
-  "last_session_timestamp": 1777997001
+  "last_session_timestamp": 1746662400
 }
