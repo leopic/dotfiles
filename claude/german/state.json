@@ -1,28 +1,12 @@
 {
-  "sessions_completed": 8,
-  "phase": 1,
-  "phases_completed": [],
-  "active_prepositions": [
-    "mit",
-    "bei",
-    "von"
-  ],
+  "sessions_completed": 9,
+  "phase": 2,
+  "phases_completed": [1],
+  "active_prepositions": ["aus", "nach", "zu"],
   "mastery": {
-    "mit": {
-      "der": 3,
-      "die": 3,
-      "das": 3
-    },
-    "bei": {
-      "der": 3,
-      "die": 3,
-      "das": 3
-    },
-    "von": {
-      "der": 3,
-      "die": 2,
-      "das": 2
-    }
+    "aus": { "der": 0, "die": 0, "das": 0 },
+    "nach": { "der": 0, "die": 0, "das": 0 },
+    "zu": { "der": 0, "die": 0, "das": 0 }
   },
-  "last_session_timestamp": 1777988854
+  "last_session_timestamp": 1746576000
 }
