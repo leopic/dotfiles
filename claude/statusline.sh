@@ -166,9 +166,13 @@ else
         "$host_display" "$cwd_part" "$lines_added" "$lines_removed"
 fi
 
-# Line 2: Model (effort) | Tokens
-printf "${BLUE}%s${RESET} ${DIM}(${RESET}%b${DIM}) |${RESET} ${ORANGE}%s${RESET} ${DIM}/${RESET} ${ORANGE}%s${RESET}\n" \
-    "$model" "$effort_status" "$current_display" "$total_display"
+# Line 2: Model (effort) | Tokens | Cost | Cache
+cache_creation_display=$(format_tokens $cache_creation)
+cache_read_display=$(format_tokens $cache_read)
+printf "${BLUE}%s${RESET} ${DIM}(${RESET}%b${DIM}) |${RESET} ${ORANGE}%s${RESET} ${DIM}/${RESET} ${ORANGE}%s${RESET} ${DIM}|${RESET} ${CYAN}%s${RESET} ${DIM}|${RESET} ${BLUE}api${RESET} ${CYAN}%s${RESET} ${DIM}|${RESET} ${YELLOW}cache:${RESET} ${CYAN}%s${RESET} ${DIM}written ·${RESET} ${CYAN}%s${RESET} ${DIM}served from cache${RESET}\n" \
+    "$model" "$effort_status" "$current_display" "$total_display" \
+    "$cost_display" "$api_duration_display" \
+    "$cache_creation_display" "$cache_read_display"
 
 # Function to build progress bar
 build_bar() {
@@ -208,13 +212,6 @@ weekly_reset_fmt=$(date -r "$weekly_reset_epoch" "+%b %d %H:%M" 2>/dev/null || e
 # Line 3: All three progress bars
 printf "${DIM}ctx${RESET} %b ${DIM}|${RESET} ${YELLOW}5h:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s |${RESET} ${YELLOW}7d:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s${RESET}\n" \
     "$context_bar" "$current_bar" "$current_pct" "$current_reset_fmt" "$weekly_bar" "$weekly_pct" "$weekly_reset_fmt"
-
-# Line 4: Cost, api time, cache stats
-cache_creation_display=$(format_tokens $cache_creation)
-cache_read_display=$(format_tokens $cache_read)
-printf "${CYAN}%s${RESET} ${DIM}|${RESET} ${BLUE}api${RESET} ${CYAN}%s${RESET} ${DIM}|${RESET} ${YELLOW}cache:${RESET} ${CYAN}%s${RESET} ${DIM}written ·${RESET} ${CYAN}%s${RESET} ${DIM}served from cache${RESET}\n" \
-    "$cost_display" "$api_duration_display" \
-    "$cache_creation_display" "$cache_read_display"
 
 # Line 5: German drill progress
 GERMAN_STATE="$HOME/.claude/german/state.json"
