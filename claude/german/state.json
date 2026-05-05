@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 7,
+  "sessions_completed": 8,
   "phase": 1,
   "phases_completed": [],
   "active_prepositions": [
@@ -9,21 +9,20 @@
   ],
   "mastery": {
     "mit": {
-      "der": 2,
+      "der": 3,
       "die": 3,
       "das": 3
     },
     "bei": {
-      "der": 2,
-      "die": 2,
-      "das": 2
+      "der": 3,
+      "die": 3,
+      "das": 3
     },
     "von": {
-      "der": 2,
+      "der": 3,
       "die": 2,
       "das": 2
     }
   },
-  "last_session_timestamp": 1746460800,
-  "read_count": 1
+  "last_session_timestamp": 1777988854
 }
