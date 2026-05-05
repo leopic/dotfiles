@@ -209,11 +209,31 @@ weekly_reset_fmt=$(date -r "$weekly_reset_epoch" "+%b %d %H:%M" 2>/dev/null || e
 printf "${DIM}ctx${RESET} %b ${DIM}|${RESET} ${YELLOW}5h:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s |${RESET} ${YELLOW}7d:${RESET} %s ${CYAN}%.0f%%${RESET} ${DIM}→ %s${RESET}\n" \
     "$context_bar" "$current_bar" "$current_pct" "$current_reset_fmt" "$weekly_bar" "$weekly_pct" "$weekly_reset_fmt"
 
-# Line 4: Cost, activity, token volume
-input_display=$(format_tokens $input_tokens)
-output_display=$(format_tokens $output_tokens)
+# Line 4: Cost, api time, cache stats
 cache_creation_display=$(format_tokens $cache_creation)
 cache_read_display=$(format_tokens $cache_read)
-printf "${CYAN}%s${RESET} ${DIM}|${RESET} ${BLUE}api${RESET} ${CYAN}%s${RESET} ${DIM}|${RESET} ${YELLOW}tokens:${RESET} ${CYAN}%s${RESET} ${DIM}in,${RESET} ${CYAN}%s${RESET} ${DIM}out,${RESET} ${CYAN}%s${RESET} ${DIM}cw,${RESET} ${CYAN}%s${RESET} ${DIM}cr${RESET}\n" \
+printf "${CYAN}%s${RESET} ${DIM}|${RESET} ${BLUE}api${RESET} ${CYAN}%s${RESET} ${DIM}|${RESET} ${YELLOW}cache:${RESET} ${CYAN}%s${RESET} ${DIM}written ·${RESET} ${CYAN}%s${RESET} ${DIM}served from cache${RESET}\n" \
     "$cost_display" "$api_duration_display" \
-    "$input_display" "$output_display" "$cache_creation_display" "$cache_read_display"
+    "$cache_creation_display" "$cache_read_display"
+
+# Line 5: German drill progress
+GERMAN_STATE="$HOME/.claude/german/state.json"
+if [ -f "$GERMAN_STATE" ]; then
+    g_phase=$($JQ -r '.phase // 1' "$GERMAN_STATE")
+    g_sessions=$($JQ -r '.sessions_completed // 0' "$GERMAN_STATE")
+    g_preps=$($JQ -r '.active_prepositions | join(" · ")' "$GERMAN_STATE")
+    g_mastered=$($JQ '[.mastery | to_entries[] | .value | to_entries[] | .value] | map(select(. >= 3)) | length' "$GERMAN_STATE")
+    g_total=$($JQ '[.mastery | to_entries[] | .value | to_entries[] | .value] | length' "$GERMAN_STATE")
+
+    g_bar=""
+    for ((i=1; i<=g_total; i++)); do
+        if [ $i -le $g_mastered ]; then
+            g_bar="${g_bar}${GREEN}●${RESET}"
+        else
+            g_bar="${g_bar}${DIM}○${RESET}"
+        fi
+    done
+
+    printf "🇩🇪  ${ORANGE}P%s/8${RESET}  ${CYAN}%s${RESET}  %b  ${DIM}%s/%s mastered · %s sessions${RESET}\n" \
+        "$g_phase" "$g_preps" "$g_bar" "$g_mastered" "$g_total" "$g_sessions"
+fi
