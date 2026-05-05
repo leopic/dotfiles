@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 13,
+  "sessions_completed": 14,
   "phase": 2,
   "phases_completed": [
     1
@@ -13,16 +13,16 @@
     "aus": {
       "der": 3,
       "die": 3,
-      "das": 2
+      "das": 3
     },
     "nach": {
       "der": 2,
       "die": 2,
-      "das": 2
+      "das": 3
     },
     "zu": {
       "der": 2,
-      "die": 2,
+      "die": 3,
       "das": 2
     }
   },
@@ -32,7 +32,7 @@
     "von": 0,
     "aus": 0,
     "nach": 0,
-    "zu": 0
+    "zu": 1
   },
-  "last_session_timestamp": 1778000844
+  "last_session_timestamp": 1778005080
 }
