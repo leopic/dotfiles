@@ -231,15 +231,12 @@ if [ -f "$GERMAN_STATE" ]; then
         fi
     done
 
-    # Show a prompt when the 10-minute cooldown has elapsed
+    # Show a prompt when 10+ minutes have passed since the last session
     g_due=""
-    GERMAN_REMINDER="$HOME/.claude/german/last_reminder.txt"
-    if [ -f "$GERMAN_REMINDER" ]; then
-        g_last=$(cat "$GERMAN_REMINDER" 2>/dev/null || echo 0)
-        g_elapsed=$(( $(date +%s) - g_last ))
-        if [ $g_elapsed -ge 600 ]; then
-            g_due="  \033[1m${ORANGE}▶ /german${RESET}"
-        fi
+    g_last_session=$($JQ -r '.last_session_timestamp // 0' "$GERMAN_STATE")
+    g_elapsed=$(( $(date +%s) - g_last_session ))
+    if [ $g_elapsed -ge 600 ]; then
+        g_due="  \033[1m${ORANGE}▶ /german${RESET}"
     fi
 
     printf "🇩🇪  ${ORANGE}P%s/8${RESET}  ${CYAN}%s${RESET}  %b  ${DIM}%s/%s mastered · %s sessions${RESET}%b\n" \
