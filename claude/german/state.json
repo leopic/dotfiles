@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 15,
+  "sessions_completed": 16,
   "phase": 3,
   "phases_completed": [
     1,
@@ -11,14 +11,14 @@
   ],
   "mastery": {
     "seit": {
-      "der": 0,
-      "die": 0,
+      "der": 1,
+      "die": 1,
       "das": 0
     },
     "gegenüber": {
       "der": 0,
       "die": 0,
-      "das": 0
+      "das": 1
     }
   },
   "preposition_mastery": {
@@ -28,8 +28,8 @@
     "aus": 1,
     "nach": 1,
     "zu": 1,
-    "seit": 0,
-    "gegenüber": 0
+    "seit": 1,
+    "gegenüber": 1
   },
-  "last_session_timestamp": 1778054200
+  "last_session_timestamp": 1778056161
 }
