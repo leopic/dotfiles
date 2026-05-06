@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 18,
+  "sessions_completed": 19,
   "phase": 3,
   "phases_completed": [
     1,
@@ -12,13 +12,13 @@
   "mastery": {
     "seit": {
       "der": 2,
-      "die": 1,
+      "die": 2,
       "das": 2
     },
     "gegenüber": {
-      "der": 1,
+      "der": 2,
       "die": 2,
-      "das": 1
+      "das": 2
     }
   },
   "preposition_mastery": {
@@ -31,5 +31,5 @@
     "seit": 3,
     "gegenüber": 3
   },
-  "last_session_timestamp": 1778067718
+  "last_session_timestamp": 1778073861
 }
