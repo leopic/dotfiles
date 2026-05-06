@@ -1,24 +1,31 @@
 {
-  "sessions_completed": 20,
-  "phase": 3,
+  "sessions_completed": 21,
+  "phase": 4,
   "phases_completed": [
     1,
-    2
+    2,
+    3
   ],
   "active_prepositions": [
-    "seit",
-    "gegenüber"
+    "durch",
+    "für",
+    "gegen"
   ],
   "mastery": {
-    "seit": {
-      "der": 3,
-      "die": 3,
-      "das": 2
+    "durch": {
+      "der": 0,
+      "die": 0,
+      "das": 0
     },
-    "gegenüber": {
-      "der": 3,
-      "die": 2,
-      "das": 2
+    "für": {
+      "der": 0,
+      "die": 0,
+      "das": 0
+    },
+    "gegen": {
+      "der": 0,
+      "die": 0,
+      "das": 0
     }
   },
   "preposition_mastery": {
@@ -29,7 +36,10 @@
     "nach": 1,
     "zu": 1,
     "seit": 3,
-    "gegenüber": 3
+    "gegenüber": 3,
+    "durch": 0,
+    "für": 0,
+    "gegen": 0
   },
-  "last_session_timestamp": 1778074597
+  "last_session_timestamp": 1778084715
 }
