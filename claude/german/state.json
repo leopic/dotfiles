@@ -1,38 +1,35 @@
 {
-  "sessions_completed": 14,
-  "phase": 2,
+  "sessions_completed": 15,
+  "phase": 3,
   "phases_completed": [
-    1
+    1,
+    2
   ],
   "active_prepositions": [
-    "aus",
-    "nach",
-    "zu"
+    "seit",
+    "gegenüber"
   ],
   "mastery": {
-    "aus": {
-      "der": 3,
-      "die": 3,
-      "das": 3
+    "seit": {
+      "der": 0,
+      "die": 0,
+      "das": 0
     },
-    "nach": {
-      "der": 3,
-      "die": 2,
-      "das": 3
-    },
-    "zu": {
-      "der": 3,
-      "die": 3,
-      "das": 3
+    "gegenüber": {
+      "der": 0,
+      "die": 0,
+      "das": 0
     }
   },
   "preposition_mastery": {
     "mit": 0,
     "bei": 0,
     "von": 0,
-    "aus": 0,
-    "nach": 0,
-    "zu": 1
+    "aus": 1,
+    "nach": 1,
+    "zu": 1,
+    "seit": 0,
+    "gegenüber": 0
   },
-  "last_session_timestamp": 1778053801
+  "last_session_timestamp": 1778054200
 }
