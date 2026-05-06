@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 19,
+  "sessions_completed": 20,
   "phase": 3,
   "phases_completed": [
     1,
@@ -11,12 +11,12 @@
   ],
   "mastery": {
     "seit": {
-      "der": 2,
-      "die": 2,
+      "der": 3,
+      "die": 3,
       "das": 2
     },
     "gegenüber": {
-      "der": 2,
+      "der": 3,
       "die": 2,
       "das": 2
     }
@@ -31,5 +31,5 @@
     "seit": 3,
     "gegenüber": 3
   },
-  "last_session_timestamp": 1778073861
+  "last_session_timestamp": 1778074597
 }
