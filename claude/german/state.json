@@ -16,14 +16,14 @@
       "das": 3
     },
     "nach": {
-      "der": 2,
+      "der": 3,
       "die": 2,
       "das": 3
     },
     "zu": {
-      "der": 2,
+      "der": 3,
       "die": 3,
-      "das": 2
+      "das": 3
     }
   },
   "preposition_mastery": {
@@ -34,5 +34,5 @@
     "nach": 0,
     "zu": 1
   },
-  "last_session_timestamp": 1778005080
+  "last_session_timestamp": 1778053801
 }
