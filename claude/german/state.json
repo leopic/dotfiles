@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 22,
+  "sessions_completed": 23,
   "phase": 4,
   "phases_completed": [
     1,
@@ -18,13 +18,13 @@
       "das": 0
     },
     "für": {
-      "der": 0,
+      "der": 1,
       "die": 1,
       "das": 0
     },
     "gegen": {
       "der": 0,
-      "die": 0,
+      "die": 1,
       "das": 1
     }
   },
@@ -37,9 +37,9 @@
     "zu": 1,
     "seit": 3,
     "gegenüber": 3,
-    "durch": 1,
+    "durch": 2,
     "für": 1,
-    "gegen": 0
+    "gegen": 1
   },
-  "last_session_timestamp": 1778140769
+  "last_session_timestamp": 1778147371
 }
