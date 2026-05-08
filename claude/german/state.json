@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 24,
+  "sessions_completed": 25,
   "phase": 4,
   "phases_completed": [
     1,
@@ -13,9 +13,9 @@
   ],
   "mastery": {
     "durch": {
-      "der": 1,
-      "die": 0,
-      "das": 0
+      "der": 2,
+      "die": 1,
+      "das": 1
     },
     "für": {
       "der": 1,
@@ -37,9 +37,9 @@
     "zu": 1,
     "seit": 3,
     "gegenüber": 3,
-    "durch": 3,
-    "für": 1,
+    "durch": 4,
+    "für": 2,
     "gegen": 2
   },
-  "last_session_timestamp": 1778165708
+  "last_session_timestamp": 1778249597
 }
