@@ -156,6 +156,15 @@ import_iterm_colors() {
     echo "Argonaut iTerm2 colors imported — select it under iTerm2 > Profiles > Colors > Color Presets."
 }
 
+link_dotfiles() {
+    ln -sf "$DOTFILES/gitconfig"        "$HOME/.gitconfig"
+    ln -sf "$DOTFILES/bash_profile"     "$HOME/.bash_profile"
+    ln -sf "$DOTFILES/vimrc"            "$HOME/.vimrc"
+    ln -sf "$DOTFILES/gitignore_global" "$HOME/.gitignore_global"
+    ln -sf "$DOTFILES/zshrc"            "$HOME/.zshrc"
+    echo "Dotfiles linked."
+}
+
 link_claude() {
     mkdir -p "$HOME/.claude"
     ln -sf "$DOTFILES/claude/settings.json"  "$HOME/.claude/settings.json"
@@ -179,6 +188,7 @@ check_z
 check_atuin
 #check_nvm
 check_tmux
+link_dotfiles
 link_claude
 check_jetbrains_mono
 import_iterm_colors
