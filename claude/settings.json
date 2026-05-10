@@ -1,5 +1,12 @@
 {
   "model": "sonnet[1m]",
+  "permissions": {
+    "allow": [
+      "Write(*/.claude/german/state.json)",
+      "Bash(jq --argjson ts *)",
+      "Bash(cd ~/dotfiles && git add claude/german/state.json*)"
+    ]
+  },
   "hooks": {
     "PostToolUse": [
       {
