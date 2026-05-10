@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 26,
+  "sessions_completed": 27,
   "phase": 4,
   "phases_completed": [
     1,
@@ -41,7 +41,28 @@
     "für": 3,
     "gegen": 3
   },
-  "next_mode": "perfekt",
-  "perfekt_mastery": {},
-  "last_session_timestamp": 1778421424
+  "next_mode": "prepositions",
+  "perfekt_mastery": {
+    "ankommen": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "bleiben": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "bringen": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "denken": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "essen": {
+      "attempts": 1,
+      "correct": 1
+    }
+  },
+  "last_session_timestamp": 1778426984
 }
