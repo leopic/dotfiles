@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 25,
+  "sessions_completed": 26,
   "phase": 4,
   "phases_completed": [
     1,
@@ -15,7 +15,7 @@
     "durch": {
       "der": 2,
       "die": 1,
-      "das": 1
+      "das": 2
     },
     "für": {
       "der": 1,
@@ -23,7 +23,7 @@
       "das": 1
     },
     "gegen": {
-      "der": 1,
+      "der": 2,
       "die": 1,
       "das": 1
     }
@@ -38,8 +38,10 @@
     "seit": 3,
     "gegenüber": 3,
     "durch": 4,
-    "für": 2,
-    "gegen": 2
+    "für": 3,
+    "gegen": 3
   },
-  "last_session_timestamp": 1778249597
+  "next_mode": "perfekt",
+  "perfekt_mastery": {},
+  "last_session_timestamp": 1778421424
 }
