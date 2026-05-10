@@ -3,8 +3,7 @@
   "permissions": {
     "allow": [
       "Write(*/.claude/german/state.json)",
-      "Bash(jq --argjson ts *)",
-      "Bash(cd ~/dotfiles && git add claude/german/state.json*)"
+      "Bash(bash ~/.claude/german/sync.sh)"
     ]
   },
   "hooks": {

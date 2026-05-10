@@ -1,4 +1,12 @@
-You are running the German B1 prepositions drill for Leo. Follow these steps exactly.
+You are running the German B1 drill for Leo. Follow these steps exactly.
+
+## Step 0 — Determine mode
+
+Read `~/.claude/german/state.json`. Check the `next_mode` field:
+- If missing or `"prepositions"`: run the **Prepositions** flow (Steps 1–9 below).
+- If `"perfekt"`: skip to the **Perfekt Blitz** section at the bottom of this file.
+
+---
 
 ## Step 1 — Read state
 
@@ -226,11 +234,15 @@ Write `~/.claude/german/state.json` with the updated values:
   "phases_completed": [...],
   "active_prepositions": [...],
   "mastery": { "...updated counts..." },
-  "preposition_mastery": { "...updated counts..." }
+  "preposition_mastery": { "...updated counts..." },
+  "next_mode": "perfekt",
+  "perfekt_mastery": { "...unchanged from existing state..." }
 }
 ```
 
 Preserve all existing `preposition_mastery` keys. If a preposition from `active_prepositions` or any completed phase is missing, add it with value 0.
+
+Flip `next_mode` to `"perfekt"`. Preserve `perfekt_mastery` exactly as-is (do not modify it in the prepositions flow).
 
 `last_session_timestamp` is stamped by the bash command in Step 9 — do not set it here.
 
@@ -238,12 +250,122 @@ Preserve all existing `preposition_mastery` keys. If a preposition from `active_
 
 ## Step 9 — Stamp timestamp and sync
 
-Run these exact commands (no confirmation needed):
+Run this exact command (no confirmation needed):
 
 ```bash
-jq --argjson ts $(date +%s) '.last_session_timestamp = $ts' ~/.claude/german/state.json > /tmp/german_state_tmp.json && mv /tmp/german_state_tmp.json ~/.claude/german/state.json
+bash ~/.claude/german/sync.sh
 ```
 
+---
+
+# Perfekt Blitz Mode
+
+## Step P1 — Load verb list
+
+Read `~/.claude/german/irregular_verbs.json`. Array of objects with fields: `infinitiv`, `meaning`, `aux` (`"hat"`, `"ist"`, or `"hat/ist"`), `partizip`.
+
+For `"hat/ist"` verbs, accept either answer as correct for the auxiliary sub-question.
+
+---
+
+## Step P2 — Pick 5 verbs
+
+From `perfekt_mastery` in `state.json` (schema: `{ "fahren": { "attempts": 0, "correct": 0 } }`):
+
+1. For every verb in the list missing from `perfekt_mastery`, treat it as `{ "attempts": 0, "correct": 0 }`.
+2. Mastery threshold: `correct >= 3`. Filter to unmastered verbs, sort by `correct` ascending then `attempts` ascending. Shuffle randomly within ties.
+3. Pick 5. If fewer than 5 unmastered remain, pad with the lowest-`correct` mastered verbs.
+
+---
+
+## Step P3 — Show Perfekt header
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Perfekt Blitz
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Mastered: N / 150
+5 verbs this session.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+---
+
+## Step P4 — Run the blitz
+
+For each of the 5 verbs, run 3 sub-questions in sequence. Wait for Leo to answer each one before asking the next.
+
+### Sub-question format
+
+```
+─────────────────────────────────────
+⚡ [N/5]  PERFEKT BLITZ
+─────────────────────────────────────
+[infinitiv]
+→ Was bedeutet es?
+```
+
+After Leo's meaning answer:
+```
+[✓ Richtig! — or — ✗ Nicht ganz → [correct meaning]]
+→ hat or ist?
+```
+
+After Leo's aux answer:
+```
+[✓ — or — ✗ → [correct aux]  ([one-line reason, e.g. "movement with destination → sein"])]
+→ Partizip II?
+```
+
+After Leo's Partizip answer:
+```
+[✓ — or — ✗ → [correct partizip]]
+
+[if all 3 correct:]  ✓ Perfekt: [aux] [partizip]   ●●○ (2/3)
+[if any wrong:]      ✗ [aux] [partizip] — not counted   ○○○ (0/3)
+```
+
+Show the pip string for this verb's `correct` count after every verb regardless of outcome.
+
+If a sub-answer is wrong, give the correction immediately and still ask the remaining sub-questions — Leo practices all three even on a miss.
+
+Meaning matching: accept close synonyms and reasonable translations. Only mark wrong if the core meaning is clearly off.
+
+**Mastery:** increment `correct` only if all 3 sub-answers were correct. Always increment `attempts`.
+
+---
+
+## Step P5 — Session summary
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Blitz complete — N/5 perfect
+
+fahren        ✓  sein · gefahren      ●●○ (2/3)
+ankommen      ✗  sein · angekommen    ○○○ (0/3)
+schreiben     ✓  hat · geschrieben    ●○○ (1/3)
+...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+---
+
+## Step P6 — Update state and sync
+
+Write `~/.claude/german/state.json`. Preserve all existing fields. Only update:
+
+```json
+{
+  "sessions_completed": [old + 1],
+  "next_mode": "prepositions",
+  "perfekt_mastery": { "...updated counts for the 5 verbs drilled..." }
+}
+```
+
+Keys in `perfekt_mastery` not drilled this session remain unchanged.
+
+Stamp timestamp and push:
+
 ```bash
-cd ~/dotfiles && git add claude/german/state.json && git diff --cached --quiet || git commit -m "chore(german): sync b1 progress" && git push
+bash ~/.claude/german/sync.sh
 ```
