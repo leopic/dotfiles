@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 28,
+  "sessions_completed": 29,
   "phase": 4,
   "phases_completed": [
     1,
@@ -41,7 +41,7 @@
     "für": 4,
     "gegen": 4
   },
-  "next_mode": "perfekt",
+  "next_mode": "prepositions",
   "perfekt_mastery": {
     "ankommen": {
       "attempts": 1,
@@ -62,7 +62,27 @@
     "essen": {
       "attempts": 1,
       "correct": 1
+    },
+    "schreiben": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "fahren": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "verstehen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "nehmen": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "sprechen": {
+      "attempts": 1,
+      "correct": 1
     }
   },
-  "last_session_timestamp": 1778427610
+  "last_session_timestamp": 1778497259
 }
