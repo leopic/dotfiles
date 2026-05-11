@@ -5,7 +5,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.bash_profile
 
 # z
-. /Users/leo/cli/z/z.sh
+[ -f "$HOME/cli/z/z.sh" ] && . "$HOME/cli/z/z.sh"
 
 # Atuin
 . "$HOME/.atuin/bin/env"
@@ -14,17 +14,17 @@ eval "$(atuin init zsh)"
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+command -v pyenv &>/dev/null && eval "$(pyenv init - zsh)"
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
 # Docker completions
-fpath=(/Users/leo/.docker/completions $fpath)
+fpath=($HOME/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 
 # bun
-[ -s "/Users/leo/.bun/_bun" ] && source "/Users/leo/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
@@ -35,7 +35,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Antigravity
-export PATH="/Users/leo/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 export PATH=$PATH:$HOME/.maestro/bin
 
 # Ruby (Homebrew)

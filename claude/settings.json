@@ -1,11 +1,11 @@
 {
-  "model": "sonnet[1m]",
   "permissions": {
     "allow": [
       "Write(*/.claude/german/state.json)",
       "Bash(bash ~/.claude/german/sync.sh)"
     ]
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "PostToolUse": [
       {
