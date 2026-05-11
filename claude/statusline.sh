@@ -219,8 +219,16 @@ if [ -f "$GERMAN_STATE" ]; then
     g_phase=$($JQ -r '.phase // 1' "$GERMAN_STATE")
     g_sessions=$($JQ -r '.sessions_completed // 0' "$GERMAN_STATE")
     g_preps=$($JQ -r '.active_prepositions | join(" · ")' "$GERMAN_STATE")
-    g_mastered=$($JQ '[.mastery | to_entries[] | .value | to_entries[] | .value] | map(select(. >= 3)) | length' "$GERMAN_STATE")
-    g_total=$($JQ '[.mastery | to_entries[] | .value | to_entries[] | .value] | length' "$GERMAN_STATE")
+    g_mastered=$($JQ '[.preposition_mastery | to_entries[] | .value] | map(select(. >= 3)) | length' "$GERMAN_STATE")
+    g_total=$($JQ '[.preposition_mastery | to_entries[]] | length' "$GERMAN_STATE")
+    g_next_mode=$($JQ -r '.next_mode // "prepositions"' "$GERMAN_STATE")
+    g_perfekt_mastered=$($JQ '[.perfekt_mastery // {} | to_entries[] | select(.value.correct >= 3)] | length' "$GERMAN_STATE")
+    g_verb_total=$($JQ 'length' "$HOME/.claude/german/irregular_verbs.json")
+
+    case "$g_next_mode" in
+        perfekt) g_mode_tag="${ORANGE}⚡blitz${RESET}" ;;
+        *)       g_mode_tag="${CYAN}preps${RESET}" ;;
+    esac
 
     g_bar=""
     for ((i=1; i<=g_total; i++)); do
@@ -239,6 +247,6 @@ if [ -f "$GERMAN_STATE" ]; then
         g_due="  \033[1m${ORANGE}▶ /german${RESET}"
     fi
 
-    printf "🇩🇪  ${ORANGE}P%s/8${RESET}  ${CYAN}%s${RESET}  %b  ${DIM}%s/%s mastered · %s sessions${RESET}%b\n" \
-        "$g_phase" "$g_preps" "$g_bar" "$g_mastered" "$g_total" "$g_sessions" "$g_due"
+    printf "🇩🇪  ${ORANGE}P%s/8${RESET} → %b  ${CYAN}%s${RESET}  %b  ${DIM}%s/%s preps |${RESET} ⚡ ${DIM}%s/%s · %s sessions${RESET}%b\n" \
+        "$g_phase" "$g_mode_tag" "$g_preps" "$g_bar" "$g_mastered" "$g_total" "$g_perfekt_mastered" "$g_verb_total" "$g_sessions" "$g_due"
 fi
