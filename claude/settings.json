@@ -55,6 +55,7 @@
     "swift-lsp@claude-plugins-official": true,
     "zenpie@zenjob": true
   },
+  "theme": "auto",
   "agentPushNotifEnabled": true,
   "voiceEnabled": true
 }
