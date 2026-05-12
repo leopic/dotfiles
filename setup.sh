@@ -168,6 +168,12 @@ import_iterm_colors() {
     echo "Color schemes imported — select them under iTerm2 > Profiles > Colors > Color Presets."
 }
 
+setup_iterm_prefs() {
+    defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$DOTFILES/iterm2"
+    defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+    echo "iTerm2 prefs pointed at $DOTFILES/iterm2 — restart iTerm2 to apply."
+}
+
 link_dotfiles() {
     ln -sf "$DOTFILES/gitconfig"        "$HOME/.gitconfig"
     ln -sf "$DOTFILES/bash_profile"     "$HOME/.bash_profile"
@@ -206,6 +212,7 @@ link_dotfiles
 link_claude
 check_jetbrains_mono
 import_iterm_colors
+setup_iterm_prefs
 
 echo "Installation complete! If 'z', 'Atuin', or 'NVM' doesn't work immediately, restart your shell."
 
