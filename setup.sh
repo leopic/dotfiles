@@ -151,9 +151,21 @@ check_jetbrains_mono() {
     fi
 }
 
+check_powerlevel10k() {
+    P10K_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+    if [ -d "$P10K_DIR" ]; then
+        echo "Powerlevel10k is already installed."
+    else
+        echo "Installing Powerlevel10k..."
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P10K_DIR"
+        echo "Powerlevel10k installed — open a new shell and run: p10k configure"
+    fi
+}
+
 import_iterm_colors() {
     open "$DOTFILES/argonaut.itermcolors"
-    echo "Argonaut iTerm2 colors imported — select it under iTerm2 > Profiles > Colors > Color Presets."
+    open "$DOTFILES/tomorrow-light.itermcolors"
+    echo "Color schemes imported — select them under iTerm2 > Profiles > Colors > Color Presets."
 }
 
 link_dotfiles() {
@@ -188,6 +200,7 @@ check_z
 check_atuin
 #check_nvm
 check_tmux
+check_powerlevel10k
 link_dotfiles
 link_claude
 check_jetbrains_mono
