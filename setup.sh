@@ -174,6 +174,7 @@ link_dotfiles() {
     ln -sf "$DOTFILES/vimrc"            "$HOME/.vimrc"
     ln -sf "$DOTFILES/gitignore_global" "$HOME/.gitignore_global"
     ln -sf "$DOTFILES/zshrc"            "$HOME/.zshrc"
+    ln -sf "$DOTFILES/tmux.conf"        "$HOME/.tmux.conf"
     echo "Dotfiles linked."
 }
 

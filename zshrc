@@ -49,3 +49,8 @@ export PATH=$PATH:$HOME/.maestro/bin
 # Ruby (Homebrew)
 export PATH="$(brew --prefix ruby)/bin:$PATH"
 export PATH="$(gem environment gemdir)/bin:$PATH"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
