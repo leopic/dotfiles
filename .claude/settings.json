@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd /Users/leonardo.picado/dotfiles && if [ -n \"$(git status --short)\" ]; then git add -A && git commit -m \"chore(dotfiles): sync changes\" && git push origin master; fi",
+            "command": "cd /Users/leonardo.picado/dotfiles && if [ -n \"$(git status --short)\" ]; then SCOPES=$(git status --short | awk '{print $2}' | awk -F'/' '{print $1}' | sed 's/^\\.//' | sed 's/\\..*//' | sort -u | head -3 | tr '\\n' ',' | sed 's/,$//'); git add -A && git commit -m \"chore(${SCOPES}): sync changes\" && git push origin master; fi",
             "async": true,
             "statusMessage": "Syncing dotfiles to origin..."
           }
