@@ -1,5 +1,9 @@
-" theme
-colorscheme desert
+" theme: follow macOS dark/light mode
+if system("defaults read -g AppleInterfaceStyle 2>/dev/null") =~ "Dark"
+  colorscheme desert
+else
+  colorscheme morning
+endif
 " line numbers
 set number
 " don't wrap long lines
