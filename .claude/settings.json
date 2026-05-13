@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/leonardo.picado/dotfiles && if [ -n \"$(git status --short)\" ]; then git add -A && git commit -m \"chore(dotfiles): sync changes\" && git push origin master; fi",
+            "async": true,
+            "statusMessage": "Syncing dotfiles to origin..."
+          }
+        ]
+      }
+    ]
+  }
+}
