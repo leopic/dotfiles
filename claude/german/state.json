@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 36,
+  "sessions_completed": 37,
   "phase": 4,
   "phases_completed": [
     1,
@@ -41,7 +41,7 @@
     "für": 5,
     "gegen": 6
   },
-  "next_mode": "perfekt",
+  "next_mode": "prepositions",
   "perfekt_mastery": {
     "ankommen": {
       "attempts": 1,
@@ -142,7 +142,27 @@
     "annehmen": {
       "attempts": 1,
       "correct": 0
+    },
+    "fallen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "lesen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "sterben": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "waschen": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "wissen": {
+      "attempts": 1,
+      "correct": 0
     }
   },
-  "last_session_timestamp": 1784380291
+  "last_session_timestamp": 1784380930
 }
