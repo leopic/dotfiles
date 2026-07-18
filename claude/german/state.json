@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 38,
+  "sessions_completed": 39,
   "phase": 4,
   "phases_completed": [
     1,
@@ -41,8 +41,28 @@
     "für": 6,
     "gegen": 6
   },
-  "next_mode": "perfekt",
+  "next_mode": "prepositions",
   "perfekt_mastery": {
+    "anrufen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "ausgehen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "ausschlafen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "aussehen": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "aussteigen": {
+      "attempts": 1,
+      "correct": 1
+    },
     "ankommen": {
       "attempts": 1,
       "correct": 0
@@ -164,5 +184,5 @@
       "correct": 0
     }
   },
-  "last_session_timestamp": 1784381587
+  "last_session_timestamp": 1784383654
 }
