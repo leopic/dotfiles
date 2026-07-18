@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 35,
+  "sessions_completed": 36,
   "phase": 4,
   "phases_completed": [
     1,
@@ -13,23 +13,23 @@
   ],
   "mastery": {
     "durch": {
-      "der": 3,
+      "der": 4,
       "die": 2,
       "das": 2
     },
     "für": {
       "der": 3,
-      "die": 2,
+      "die": 3,
       "das": 2
     },
     "gegen": {
       "der": 2,
       "die": 2,
-      "das": 3
+      "das": 4
     }
   },
   "preposition_mastery": {
-    "mit": 0,
+    "mit": 1,
     "bei": 0,
     "von": 0,
     "aus": 1,
@@ -39,9 +39,9 @@
     "gegenüber": 3,
     "durch": 6,
     "für": 5,
-    "gegen": 5
+    "gegen": 6
   },
-  "next_mode": "prepositions",
+  "next_mode": "perfekt",
   "perfekt_mastery": {
     "ankommen": {
       "attempts": 1,
@@ -144,5 +144,5 @@
       "correct": 0
     }
   },
-  "last_session_timestamp": 1783348051
+  "last_session_timestamp": 1784380291
 }
