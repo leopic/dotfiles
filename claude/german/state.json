@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 40,
+  "sessions_completed": 41,
   "phase": 5,
   "phases_completed": [
     1,
@@ -38,7 +38,7 @@
     "ohne": 0,
     "um": 0
   },
-  "next_mode": "perfekt",
+  "next_mode": "prepositions",
   "perfekt_mastery": {
     "anrufen": {
       "attempts": 1,
@@ -179,7 +179,27 @@
     "wissen": {
       "attempts": 1,
       "correct": 0
+    },
+    "beginnen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "bekommen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "einladen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "bitten": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "einschlafen": {
+      "attempts": 1,
+      "correct": 0
     }
   },
-  "last_session_timestamp": 1784554363
+  "last_session_timestamp": 1784557200
 }
