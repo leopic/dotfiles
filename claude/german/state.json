@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 42,
+  "sessions_completed": 43,
   "phase": 5,
   "phases_completed": [
     1,
@@ -38,8 +38,28 @@
     "ohne": 1,
     "um": 0
   },
-  "next_mode": "perfekt",
+  "next_mode": "prepositions",
   "perfekt_mastery": {
+    "fliegen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "verlieren": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "treffen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "backen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "wachsen": {
+      "attempts": 1,
+      "correct": 0
+    },
     "anrufen": {
       "attempts": 1,
       "correct": 1
@@ -201,5 +221,5 @@
       "correct": 0
     }
   },
-  "last_session_timestamp": 1784625286
+  "last_session_timestamp": 1784651308
 }
