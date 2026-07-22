@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 43,
+  "sessions_completed": 44,
   "phase": 5,
   "phases_completed": [
     1,
@@ -14,13 +14,13 @@
   "mastery": {
     "ohne": {
       "der": 1,
-      "die": 0,
+      "die": 1,
       "das": 1
     },
     "um": {
-      "der": 0,
+      "der": 1,
       "die": 1,
-      "das": 0
+      "das": 1
     }
   },
   "preposition_mastery": {
@@ -35,10 +35,10 @@
     "durch": 7,
     "für": 6,
     "gegen": 7,
-    "ohne": 1,
+    "ohne": 2,
     "um": 0
   },
-  "next_mode": "prepositions",
+  "next_mode": "perfekt",
   "perfekt_mastery": {
     "fliegen": {
       "attempts": 1,
@@ -221,5 +221,5 @@
       "correct": 0
     }
   },
-  "last_session_timestamp": 1784651308
+  "last_session_timestamp": 1784712622
 }
