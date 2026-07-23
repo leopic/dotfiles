@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 44,
+  "sessions_completed": 45,
   "phase": 5,
   "phases_completed": [
     1,
@@ -38,8 +38,28 @@
     "ohne": 2,
     "um": 0
   },
-  "next_mode": "perfekt",
+  "next_mode": "prepositions",
   "perfekt_mastery": {
+    "tragen": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "fliehen": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "gewinnen": {
+      "attempts": 1,
+      "correct": 1
+    },
+    "steigen": {
+      "attempts": 1,
+      "correct": 0
+    },
+    "schneiden": {
+      "attempts": 1,
+      "correct": 0
+    },
     "fliegen": {
       "attempts": 1,
       "correct": 1
@@ -221,5 +241,5 @@
       "correct": 0
     }
   },
-  "last_session_timestamp": 1784712622
+  "last_session_timestamp": 1784794962
 }
