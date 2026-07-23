@@ -1,5 +1,5 @@
 {
-  "sessions_completed": 45,
+  "sessions_completed": 46,
   "phase": 5,
   "phases_completed": [
     1,
@@ -13,13 +13,13 @@
   ],
   "mastery": {
     "ohne": {
-      "der": 1,
+      "der": 2,
       "die": 1,
-      "das": 1
+      "das": 2
     },
     "um": {
       "der": 1,
-      "die": 1,
+      "die": 2,
       "das": 1
     }
   },
@@ -35,10 +35,10 @@
     "durch": 7,
     "für": 6,
     "gegen": 7,
-    "ohne": 2,
-    "um": 0
+    "ohne": 3,
+    "um": 1
   },
-  "next_mode": "prepositions",
+  "next_mode": "perfekt",
   "perfekt_mastery": {
     "tragen": {
       "attempts": 1,
@@ -241,5 +241,5 @@
       "correct": 0
     }
   },
-  "last_session_timestamp": 1784794962
+  "last_session_timestamp": 1784807481
 }
