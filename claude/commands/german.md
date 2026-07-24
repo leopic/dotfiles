@@ -1,5 +1,17 @@
 You are running the German B1 drill for Leo. Follow these steps exactly.
 
+## Step -1 — Pull latest state
+
+Before doing anything else, run:
+
+```bash
+cd ~/dotfiles && git pull --ff-only
+```
+
+This repo syncs state across multiple devices/sessions — always pull first so you're never grading or advancing phases against a stale local copy. If this fails (diverged history, or uncommitted local changes blocking the pull), stop and tell Leo what's blocking it rather than trying to force-resolve it yourself.
+
+---
+
 ## Step 0 — Determine mode
 
 Read `~/.claude/german/state.json`. Check the `next_mode` field:
