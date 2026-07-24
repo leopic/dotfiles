@@ -55,8 +55,11 @@
     "swift-lsp@claude-plugins-official": true,
     "zenpie@zenjob": true
   },
+  "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
   "theme": "auto",
+  "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "voiceEnabled": true,
-  "inputNeededNotifEnabled": true
+  "tui": "fullscreen"
 }
