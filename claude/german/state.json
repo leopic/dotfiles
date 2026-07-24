@@ -241,5 +241,39 @@
       "correct": 0
     }
   },
-  "last_session_timestamp": 1784807481
+  "last_session_timestamp": 1784807481,
+  "grammatik_mastery": {
+    "adjective_endings": {
+      "nom_der": 0,
+      "nom_die": 0,
+      "nom_das": 0,
+      "nom_plural": 0,
+      "akk_der": 0,
+      "akk_die": 0,
+      "akk_das": 0,
+      "akk_plural": 0,
+      "dat_der": 0,
+      "dat_die": 0,
+      "dat_das": 0,
+      "dat_plural": 0
+    },
+    "modal_infinitiv": 0
+  },
+  "writing": {
+    "sessions_completed": 0,
+    "next_task_type": "teil1",
+    "recent_topics": [],
+    "error_tags": {
+      "wortstellung_v2": 0,
+      "wortstellung_nebensatz": 0,
+      "kasus": 0,
+      "konnektoren": 0,
+      "register": 0,
+      "wortschatz": 0,
+      "rechtschreibung": 0,
+      "zeichensetzung": 0,
+      "struktur": 0
+    },
+    "history": []
+  }
 }
